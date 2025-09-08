@@ -1,0 +1,17 @@
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\bin\Debug\net8.0\Mobile_Infrastructure.deps.json
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\bin\Debug\net8.0\Mobile_Infrastructure.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\bin\Debug\net8.0\Mobile_Infrastructure.pdb
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\bin\Debug\net8.0\Mobile_Core.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\bin\Debug\net8.0\Mobile_Core.pdb
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\Mobile_Infrastructure.csproj.AssemblyReference.cache
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\Mobile_Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\Mobile_Infrastructure.AssemblyInfoInputs.cache
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\Mobile_Infrastructure.AssemblyInfo.cs
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\Mobile_Infrastructure.csproj.CoreCompileInputs.cache
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\Mobile_I.8C704177.Up2Date
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\Mobile_Infrastructure.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\refint\Mobile_Infrastructure.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\Mobile_Infrastructure.pdb
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\obj\Debug\net8.0\ref\Mobile_Infrastructure.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\bin\Debug\net8.0\Mobile_Utility.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Infrastructure\bin\Debug\net8.0\Mobile_Utility.pdb

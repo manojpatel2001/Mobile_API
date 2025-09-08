@@ -1,0 +1,11 @@
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\bin\Release\net8.0\Mobile_Utility.deps.json
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\bin\Release\net8.0\Mobile_Utility.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\bin\Release\net8.0\Mobile_Utility.pdb
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\obj\Release\net8.0\Mobile_Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\obj\Release\net8.0\Mobile_Utility.AssemblyInfoInputs.cache
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\obj\Release\net8.0\Mobile_Utility.AssemblyInfo.cs
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\obj\Release\net8.0\Mobile_Utility.csproj.CoreCompileInputs.cache
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\obj\Release\net8.0\Mobile_Utility.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\obj\Release\net8.0\refint\Mobile_Utility.dll
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\obj\Release\net8.0\Mobile_Utility.pdb
+D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_Utility\obj\Release\net8.0\ref\Mobile_Utility.dll

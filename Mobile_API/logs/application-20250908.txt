@@ -1,0 +1,122 @@
+2025-09-08 00:15:25.125 [INF] : Starting web application {}
+2025-09-08 00:15:26.268 [INF] : Web application configured successfully {}
+2025-09-08 00:15:26.480 [WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. {"EventId":{"Id":8,"Name":"DeveloperCertificateNotTrusted"}}
+2025-09-08 00:15:26.555 [INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7148 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 00:15:26.559 [INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5121 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 00:15:26.755 [INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down. {}
+2025-09-08 00:15:26.757 [INF] Microsoft.Hosting.Lifetime: Hosting environment: Development {}
+2025-09-08 00:15:26.758 [INF] Microsoft.Hosting.Lifetime: Content root path: D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_API {}
+2025-09-08 00:15:57.901 [INF] Mobile_Infrastructure.Repository.UnitOfWork: UnitOfWork initialized successfully {"ActionId":"b8a702ae-64d5-48d3-8946-dd01bc2cbdab","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7QR1STP3:00000011","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7QR1STP3"}
+2025-09-08 00:15:58.289 [WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"ActionId":"b8a702ae-64d5-48d3-8946-dd01bc2cbdab","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7QR1STP3:00000011","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7QR1STP3"}
+2025-09-08 00:16:02.125 [ERR] Microsoft.EntityFrameworkCore.Query: An exception occurred while iterating over the results of a query for context type 'Mobile_Core.DB.MobileDbcontext'.
+System.InvalidCastException: Unable to cast object of type 'System.Byte' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method19(Closure, QueryContext, DbDataReader, Int32[])
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() {"EventId":{"Id":10100,"Name":"Microsoft.EntityFrameworkCore.Query.QueryIterationFailed"},"ActionId":"b8a702ae-64d5-48d3-8946-dd01bc2cbdab","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7QR1STP3:00000011","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7QR1STP3"}
+System.InvalidCastException: Unable to cast object of type 'System.Byte' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method19(Closure, QueryContext, DbDataReader, Int32[])
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-09-08 00:17:30.697 [INF] : Starting web application {}
+2025-09-08 00:17:31.785 [INF] : Web application configured successfully {}
+2025-09-08 00:17:32.162 [WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. {"EventId":{"Id":8,"Name":"DeveloperCertificateNotTrusted"}}
+2025-09-08 00:17:32.243 [INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7148 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 00:17:32.245 [INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5121 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 00:17:32.336 [INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down. {}
+2025-09-08 00:17:32.337 [INF] Microsoft.Hosting.Lifetime: Hosting environment: Development {}
+2025-09-08 00:17:32.339 [INF] Microsoft.Hosting.Lifetime: Content root path: D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_API {}
+2025-09-08 00:17:42.183 [INF] Mobile_Infrastructure.Repository.UnitOfWork: UnitOfWork initialized successfully {"ActionId":"6d1ef882-3042-42ff-ac0c-0aa72858e663","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7S0GHQJN:00000001","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7S0GHQJN"}
+2025-09-08 00:17:46.706 [WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"ActionId":"6d1ef882-3042-42ff-ac0c-0aa72858e663","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7S0GHQJN:00000001","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7S0GHQJN"}
+2025-09-08 00:17:51.015 [ERR] Microsoft.EntityFrameworkCore.Query: An exception occurred while iterating over the results of a query for context type 'Mobile_Core.DB.MobileDbcontext'.
+System.InvalidCastException: Unable to cast object of type 'System.Byte' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method19(Closure, QueryContext, DbDataReader, Int32[])
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() {"EventId":{"Id":10100,"Name":"Microsoft.EntityFrameworkCore.Query.QueryIterationFailed"},"ActionId":"6d1ef882-3042-42ff-ac0c-0aa72858e663","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7S0GHQJN:00000001","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7S0GHQJN"}
+System.InvalidCastException: Unable to cast object of type 'System.Byte' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method19(Closure, QueryContext, DbDataReader, Int32[])
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-09-08 00:18:23.380 [ERR] Microsoft.EntityFrameworkCore.Query: An exception occurred while iterating over the results of a query for context type 'Mobile_Core.DB.MobileDbcontext'.
+System.InvalidCastException: Unable to cast object of type 'System.Byte' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method19(Closure, QueryContext, DbDataReader, Int32[])
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() {"EventId":{"Id":10100,"Name":"Microsoft.EntityFrameworkCore.Query.QueryIterationFailed"},"ActionId":"6d1ef882-3042-42ff-ac0c-0aa72858e663","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7S0GHQJN:00000001","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7S0GHQJN"}
+System.InvalidCastException: Unable to cast object of type 'System.Byte' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method19(Closure, QueryContext, DbDataReader, Int32[])
+   at Microsoft.EntityFrameworkCore.Query.Internal.FromSqlQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-09-08 00:19:52.497 [INF] : Starting web application {}
+2025-09-08 00:19:53.243 [INF] : Web application configured successfully {}
+2025-09-08 00:19:53.377 [WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. {"EventId":{"Id":8,"Name":"DeveloperCertificateNotTrusted"}}
+2025-09-08 00:19:53.431 [INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7148 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 00:19:53.433 [INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5121 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 00:19:53.505 [INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down. {}
+2025-09-08 00:19:53.506 [INF] Microsoft.Hosting.Lifetime: Hosting environment: Development {}
+2025-09-08 00:19:53.507 [INF] Microsoft.Hosting.Lifetime: Content root path: D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_API {}
+2025-09-08 00:20:03.167 [INF] Mobile_Infrastructure.Repository.UnitOfWork: UnitOfWork initialized successfully {"ActionId":"0860fc26-1b7a-4c2e-b166-5efe39196783","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7TAKM32K:00000001","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7TAKM32K"}
+2025-09-08 00:20:17.135 [WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"ActionId":"0860fc26-1b7a-4c2e-b166-5efe39196783","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFE7TAKM32K:00000001","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFE7TAKM32K"}
+2025-09-08 09:24:31.864 [INF] : Starting web application {}
+2025-09-08 09:24:34.233 [INF] : Web application configured successfully {}
+2025-09-08 09:24:34.407 [WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. {"EventId":{"Id":8,"Name":"DeveloperCertificateNotTrusted"}}
+2025-09-08 09:24:34.471 [INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7148 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:24:34.473 [INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5121 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:24:34.546 [INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down. {}
+2025-09-08 09:24:34.547 [INF] Microsoft.Hosting.Lifetime: Hosting environment: Development {}
+2025-09-08 09:24:34.548 [INF] Microsoft.Hosting.Lifetime: Content root path: D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_API {}
+2025-09-08 09:25:11.457 [INF] Mobile_Infrastructure.Repository.UnitOfWork: UnitOfWork initialized successfully {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:11.536 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: Login attempt started for user: Admin with DeviceId: 45af787026e5d0ad {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:11.539 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: Validating user login parameters {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:11.540 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: User login validation successful for: Admin {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:11.541 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: User validation successful for: Admin {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:11.562 [INF] Mobile_Infrastructure.Repository.AuthManage.LoginRepository: Attempting to authenticate user: Admin with DeviceId: 45af787026e5d0ad {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:11.951 [WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:15.257 [INF] Mobile_Infrastructure.Repository.AuthManage.LoginRepository: User authentication successful for: Admin {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:15.261 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: User authentication successful for: Admin {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:15.266 [INF] Mobile_Infrastructure.Repository.AuthManage.LoginRepository: Retrieving login data for user: Admin {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:16.567 [INF] Mobile_Infrastructure.Repository.AuthManage.LoginRepository: Login data retrieved successfully for user: Admin {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:16.570 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: Login data retrieved successfully for user: Admin {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:16.598 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: Building JWT token for user {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:16.674 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: JWT token generated successfully {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:25:16.678 [INF] Mobile_API.Controllers.AuthManage.LoginAPIController: Login process completed successfully for user: Admin {"ActionId":"74c7f860-5478-4581-9a0b-0c5336e0504c","ActionName":"Mobile_API.Controllers.AuthManage.LoginAPIController.Login (Mobile_API)","RequestId":"0HNFEHDMC7JRD:00000011","RequestPath":"/api/LoginAPI/Login","ConnectionId":"0HNFEHDMC7JRD"}
+2025-09-08 09:31:30.291 [INF] : Starting web application {}
+2025-09-08 09:31:31.007 [INF] : Web application configured successfully {}
+2025-09-08 09:31:31.143 [WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. {"EventId":{"Id":8,"Name":"DeveloperCertificateNotTrusted"}}
+2025-09-08 09:31:31.196 [INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7148 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:31:31.198 [INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5121 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:31:31.269 [INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down. {}
+2025-09-08 09:31:31.270 [INF] Microsoft.Hosting.Lifetime: Hosting environment: Development {}
+2025-09-08 09:31:31.271 [INF] Microsoft.Hosting.Lifetime: Content root path: D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_API {}
+2025-09-08 09:31:40.239 [INF] Mobile_Infrastructure.Repository.UnitOfWork: UnitOfWork initialized successfully {"ActionId":"f26cabe5-8f3e-4e2c-8e1f-5ae182f213b0","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFEHHIEO623:00000011","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFEHHIEO623"}
+2025-09-08 09:31:42.602 [WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"ActionId":"f26cabe5-8f3e-4e2c-8e1f-5ae182f213b0","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFEHHIEO623:00000011","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFEHHIEO623"}
+2025-09-08 09:38:42.935 [INF] : Starting web application {}
+2025-09-08 09:38:43.670 [INF] : Web application configured successfully {}
+2025-09-08 09:38:43.888 [WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. {"EventId":{"Id":8,"Name":"DeveloperCertificateNotTrusted"}}
+2025-09-08 09:38:43.949 [INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7148 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:38:43.951 [INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5121 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:38:44.031 [INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down. {}
+2025-09-08 09:38:44.032 [INF] Microsoft.Hosting.Lifetime: Hosting environment: Development {}
+2025-09-08 09:38:44.033 [INF] Microsoft.Hosting.Lifetime: Content root path: D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_API {}
+2025-09-08 09:45:54.089 [INF] Mobile_Infrastructure.Repository.UnitOfWork: UnitOfWork initialized successfully {"ActionId":"a8e605e7-35de-4384-8cae-60c5cf255936","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFEHLJFVT1U:00000011","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFEHLJFVT1U"}
+2025-09-08 09:46:02.733 [WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development. {"EventId":{"Id":10400,"Name":"Microsoft.EntityFrameworkCore.Infrastructure.SensitiveDataLoggingEnabledWarning"},"ActionId":"a8e605e7-35de-4384-8cae-60c5cf255936","ActionName":"Mobile_API.Controllers.EmployeeAttendance.EmployeeAttendanceAPIController.GetAutoList (Mobile_API)","RequestId":"0HNFEHLJFVT1U:00000011","RequestPath":"/api/EmployeeAttendanceAPI/GetAutoList","ConnectionId":"0HNFEHLJFVT1U"}
+2025-09-08 09:48:55.129 [INF] : Starting web application {}
+2025-09-08 09:48:55.953 [INF] : Web application configured successfully {}
+2025-09-08 09:48:56.082 [WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. {"EventId":{"Id":8,"Name":"DeveloperCertificateNotTrusted"}}
+2025-09-08 09:48:56.134 [INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7148 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:48:56.136 [INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5121 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:48:56.202 [INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down. {}
+2025-09-08 09:48:56.204 [INF] Microsoft.Hosting.Lifetime: Hosting environment: Development {}
+2025-09-08 09:48:56.205 [INF] Microsoft.Hosting.Lifetime: Content root path: D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_API {}
+2025-09-08 09:49:09.362 [INF] : Starting web application {}
+2025-09-08 09:49:10.136 [INF] : Web application configured successfully {}
+2025-09-08 09:49:10.271 [WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert. {"EventId":{"Id":8,"Name":"DeveloperCertificateNotTrusted"}}
+2025-09-08 09:49:10.328 [INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7148 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:49:10.330 [INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5121 {"EventId":{"Id":14,"Name":"ListeningOnAddress"}}
+2025-09-08 09:49:10.400 [INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down. {}
+2025-09-08 09:49:10.401 [INF] Microsoft.Hosting.Lifetime: Hosting environment: Development {}
+2025-09-08 09:49:10.403 [INF] Microsoft.Hosting.Lifetime: Content root path: D:\Manoj Patel\Project\RELAY_Mobile_API\Mobile_API {}
