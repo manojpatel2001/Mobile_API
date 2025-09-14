@@ -2,6 +2,7 @@
 using Mobile_Core.AuthManage;
 using Mobile_Core.CommonClass;
 using Mobile_Core.EmployeeAttedance;
+using Mobile_Core.ViewModel.Employee;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +30,7 @@ namespace Mobile_Core.DB
             modelBuilder.Entity<GetLoginData>().HasNoKey();
             modelBuilder.Entity<EmployeeAttendanceStatusVM>().HasNoKey();
             modelBuilder.Entity<AutoListVM>().HasNoKey();
-
-
-
+            modelBuilder.Entity<vmGetEmployeeById>().HasNoKey();
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

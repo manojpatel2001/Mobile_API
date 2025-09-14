@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mobile_Core.EmployeeAttedance;
 using Mobile_Infrastructure.Interface;
@@ -10,6 +11,7 @@ namespace Mobile_API.Controllers.EmployeeAttendance
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EmployeeAttendanceAPIController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;

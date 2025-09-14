@@ -27,10 +27,12 @@ namespace Mobile_Infrastructure.Repository.EmployeeAttedance
                 var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
                     EXEC USP_Mobile_EmployeeAttendance
                         @Status = {"Insert"},
+                        @CompanyId = {attendance.CompanyId},
                         @EmployeeId = {attendance.EmployeeId},
                         @Lat = {attendance.Lat},
                         @Long = {attendance.Long},
-                        @TypeId = {attendance.TypeId}
+                        @LocationName = {attendance.LocationName},
+                        @PunchTypeId = {attendance.PunchTypeId}
                 ").ToListAsync();
 
                 return result.FirstOrDefault() ?? new SP_Response { Success = false, Message = "Something went wrong!" };

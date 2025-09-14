@@ -13,5 +13,8 @@ namespace Mobile_Infrastructure.Interface.AuthManage
     {
         Task<SP_Response> AuthenticateUser(UserLogin userLogin);
         Task<GetLoginData?> GetLoginData(UserLogin userLogin);
+        Task<SP_Response> UpdateFCMToken (Common_Parameter parameter);
+        Task<SP_Response> ChangePassword(ChangePassword parameter);
+   
     }
 }

@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Mobile_API.Services;
 using Mobile_Core.AuthManage;
+using Mobile_Core.CommonClass;
+using Mobile_Core.EmployeeAttedance;
 using Mobile_Infrastructure.Interface;
 using Mobile_Utility;
 using System.IdentityModel.Tokens.Jwt;
@@ -19,14 +23,17 @@ namespace Mobile_API.Controllers.AuthManage
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
         private readonly ILogger<LoginAPIController> _logger;
+        private readonly FileUploadService _fileUploadService;
 
         public LoginAPIController(IUnitOfWork unitOfWork,
                                  IConfiguration configuration,
-                                 ILogger<LoginAPIController> logger)
+                                 ILogger<LoginAPIController> logger,
+                                  FileUploadService fileUploadService)
         {
             _unitOfWork = unitOfWork;
             _configuration = configuration;
             _logger = logger;
+            _fileUploadService = fileUploadService;
         }
 
         [HttpPost("Login")]
@@ -192,6 +199,49 @@ namespace Mobile_API.Controllers.AuthManage
                     Status = false,
                     ResponseMessage = "Validation error occurred"
                 };
+            }
+        }
+        [Authorize]
+        [HttpPut("UpdateFCMToken")]
+        public async Task<APIResponse> UpdateFCMToken (Common_Parameter model)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(model.FCMToken))
+                    return new APIResponse { Status = false, ResponseMessage = "FCM Token cannot be null." };
+
+                var result = await _unitOfWork.LoginRepository.UpdateFCMToken(model);
+                return new APIResponse
+                {
+                    Status = result.Success,
+                    ResponseMessage = result.Message
+                };
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to update FCM Token. Please try again later." };
+            }
+        }
+
+        [Authorize]
+        [HttpPut("ChangePassword")]
+        public async Task<APIResponse> ChangePassword(ChangePassword model)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(model.NewPassword))
+                    return new APIResponse { Status = false, ResponseMessage = "New Password is required." };
+
+                var result = await _unitOfWork.LoginRepository.ChangePassword(model);
+                return new APIResponse
+                {
+                    Status = result.Success,
+                    ResponseMessage = result.Message
+                };
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to change the password. Please try again later." };
             }
         }
     }

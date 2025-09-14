@@ -39,6 +39,42 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.0.3"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Microsoft.AspNetCore.Http.Features/5.0.17": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.IO.Pipelines": "5.0.2"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
         "type": "package",
         "compile": {
@@ -1202,6 +1238,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
           "Microsoft.EntityFrameworkCore": "9.0.8"
         },
         "compile": {
@@ -1279,6 +1316,40 @@
         "lib/net8.0/Azure.Identity.xml",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.0": {
+      "sha512": "rwxaZYHips5M9vqxRkGfJthTx+Ws4O4yCuefn17J371jL3ouC5Ker43h2hXb5yd9BMnImE9rznT75KJHm6bMgg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.17": {
+      "sha512": "3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/5.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
@@ -3248,6 +3319,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.8",
       "Mobile_Core >= 1.0.0",
       "Mobile_Infrastructure >= 1.0.0",
@@ -3267,11 +3339,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_API\\Mobile_API.csproj",
+      "projectUniqueName": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_API\\Mobile_API.csproj",
       "projectName": "Mobile_API",
-      "projectPath": "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_API\\Mobile_API.csproj",
+      "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_API\\Mobile_API.csproj",
       "packagesPath": "C:\\Users\\manoj\\.nuget\\packages\\",
-      "outputPath": "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_API\\obj\\",
+      "outputPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3292,14 +3364,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_Core\\Mobile_Core.csproj": {
-              "projectPath": "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_Core\\Mobile_Core.csproj"
+            "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj": {
+              "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj"
             },
-            "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj": {
-              "projectPath": "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj"
+            "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj": {
+              "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj"
             },
-            "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_Utility\\Mobile_Utility.csproj": {
-              "projectPath": "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_Utility\\Mobile_Utility.csproj"
+            "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj": {
+              "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj"
             }
           }
         }
@@ -3320,6 +3392,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[9.0.8, )"

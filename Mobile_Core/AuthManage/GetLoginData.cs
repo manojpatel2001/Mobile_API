@@ -18,12 +18,16 @@ namespace Mobile_Core.AuthManage
         public int? DesignationId { get; set; }
         public string? UserName { get; set; }
         public string? MobileNo { get; set; }
-        public int? IsActive { get; set; }
         public int? BranchId { get; set; }
+        public int? CompanyId { get; set; }
         public string? BranchName { get; set; }
-        public int? IsReset { get; set; }
+        public Boolean? IsReset { get; set; }
+        public int? IsGeofencing { get; set; }
+        public int? IsSelfiRequired { get; set; }
         public string? Designation { get; set; }
-        public string? ProfilePic { get; set; }
+        public string? GeoLocationData { get; set; }
+        public string? EmployeeProfile { get; set; }
+
     }
 
 }

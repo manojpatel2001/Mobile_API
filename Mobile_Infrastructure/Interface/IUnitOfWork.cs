@@ -1,5 +1,6 @@
 ﻿using Mobile_Infrastructure.Interface.AuthManage;
 using Mobile_Infrastructure.Interface.EmployeeAttedance;
+using Mobile_Infrastructure.Interface.EmpployeeManage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Mobile_Infrastructure.Interface
     {
         ILoginRepository LoginRepository { get; }
         IEmployeeAttendanceRepository EmployeeAttendanceRepository { get; }
+        IEmpployeeManageRepository EmpployeeManageRepository { get; }
 
     }
 }

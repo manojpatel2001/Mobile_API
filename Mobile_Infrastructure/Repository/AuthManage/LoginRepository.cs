@@ -4,6 +4,8 @@ using Microsoft.Extensions.Logging;
 using Mobile_Core.AuthManage;
 using Mobile_Core.CommonClass;
 using Mobile_Core.DB;
+using Mobile_Core.EmployeeAttedance;
+using Mobile_Core.ViewModel.Employee;
 using Mobile_Infrastructure.Interface.AuthManage;
 using Mobile_Utility;
 
@@ -103,6 +105,43 @@ namespace Mobile_Infrastructure.Repository.AuthManage
                 return null;
             }
         }
+        public async Task<SP_Response> UpdateFCMToken (Common_Parameter parameter)
+        {
+            try
+            {
+                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
+                    EXEC USP_MobileFCMToken
+                        @Token = {parameter.FCMToken},
+                        @User_Id = {parameter.UserId},
+                        @DeviceId = {parameter.DeviceId}
+                ").ToListAsync();
+
+                return result.FirstOrDefault() ?? new SP_Response { Success = false, Message = "Something went wrong!" };
+            }
+            catch
+            {
+                return new SP_Response { Success = false, Message = "Something went wrong!" };
+            }
+        }
+        public async Task<SP_Response> ChangePassword (ChangePassword parameter)
+        {
+            try
+            {
+                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
+                    EXEC USP_Mobile_ChangePassword
+                        @Action = {"ChangePassword"},
+                        @UserId = {parameter.UserId},
+                        @NewPassword = {parameter.NewPassword}
+                ").ToListAsync();
+
+                return result.FirstOrDefault() ?? new SP_Response { Success = false, Message = "Something went wrong!" };
+            }
+            catch (Exception ex)
+            {
+                return new SP_Response { Success = false, Message = "Something went wrong!" };
+            }
+        }
+
     }
 }
 

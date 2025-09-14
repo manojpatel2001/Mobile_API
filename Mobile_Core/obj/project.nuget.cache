@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Rb/Xa59LHgI=",
+  "dgSpecHash": "Aaa/9TLDYbo=",
   "success": true,
-  "projectFilePath": "D:\\Manoj Patel\\Project\\RELAY_Mobile_API\\Mobile_Core\\Mobile_Core.csproj",
+  "projectFilePath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\manoj\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\manoj\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.8\\microsoft.entityframeworkcore.9.0.8.nupkg.sha512",
     "C:\\Users\\manoj\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.8\\microsoft.entityframeworkcore.abstractions.9.0.8.nupkg.sha512",
     "C:\\Users\\manoj\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.8\\microsoft.entityframeworkcore.analyzers.9.0.8.nupkg.sha512",
@@ -15,7 +16,8 @@
     "C:\\Users\\manoj\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.8\\microsoft.extensions.logging.abstractions.9.0.8.nupkg.sha512",
     "C:\\Users\\manoj\\.nuget\\packages\\microsoft.extensions.options\\9.0.8\\microsoft.extensions.options.9.0.8.nupkg.sha512",
     "C:\\Users\\manoj\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.8\\microsoft.extensions.primitives.9.0.8.nupkg.sha512",
-    "C:\\Users\\manoj\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.8\\system.diagnostics.diagnosticsource.9.0.8.nupkg.sha512"
+    "C:\\Users\\manoj\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.8\\system.diagnostics.diagnosticsource.9.0.8.nupkg.sha512",
+    "C:\\Users\\manoj\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }
