@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_API\\Mobile_API.csproj": {}
+    "D:\\Mobile API\\Mobile_API\\Mobile_API.csproj": {}
   },
   "projects": {
-    "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_API\\Mobile_API.csproj": {
+    "D:\\Mobile API\\Mobile_API\\Mobile_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_API\\Mobile_API.csproj",
+        "projectUniqueName": "D:\\Mobile API\\Mobile_API\\Mobile_API.csproj",
         "projectName": "Mobile_API",
-        "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_API\\Mobile_API.csproj",
-        "packagesPath": "C:\\Users\\manoj\\.nuget\\packages\\",
-        "outputPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_API\\obj\\",
+        "projectPath": "D:\\Mobile API\\Mobile_API\\Mobile_API.csproj",
+        "packagesPath": "C:\\Users\\KAMROOP\\.nuget\\packages\\",
+        "outputPath": "D:\\Mobile API\\Mobile_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\manoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KAMROOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,20 +26,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj": {
-                "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj"
+              "D:\\Mobile API\\Mobile_Core\\Mobile_Core.csproj": {
+                "projectPath": "D:\\Mobile API\\Mobile_Core\\Mobile_Core.csproj"
               },
-              "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj": {
-                "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj"
+              "D:\\Mobile API\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj": {
+                "projectPath": "D:\\Mobile API\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj"
               },
-              "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj": {
-                "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj"
+              "D:\\Mobile API\\Mobile_Utility\\Mobile_Utility.csproj": {
+                "projectPath": "D:\\Mobile API\\Mobile_Utility\\Mobile_Utility.csproj"
               }
             }
           }
@@ -112,24 +113,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj": {
+    "D:\\Mobile API\\Mobile_Core\\Mobile_Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj",
+        "projectUniqueName": "D:\\Mobile API\\Mobile_Core\\Mobile_Core.csproj",
         "projectName": "Mobile_Core",
-        "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj",
-        "packagesPath": "C:\\Users\\manoj\\.nuget\\packages\\",
-        "outputPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\obj\\",
+        "projectPath": "D:\\Mobile API\\Mobile_Core\\Mobile_Core.csproj",
+        "packagesPath": "C:\\Users\\KAMROOP\\.nuget\\packages\\",
+        "outputPath": "D:\\Mobile API\\Mobile_Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\manoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KAMROOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -138,6 +139,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -187,24 +189,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj": {
+    "D:\\Mobile API\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj",
+        "projectUniqueName": "D:\\Mobile API\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj",
         "projectName": "Mobile_Infrastructure",
-        "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\manoj\\.nuget\\packages\\",
-        "outputPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Infrastructure\\obj\\",
+        "projectPath": "D:\\Mobile API\\Mobile_Infrastructure\\Mobile_Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\KAMROOP\\.nuget\\packages\\",
+        "outputPath": "D:\\Mobile API\\Mobile_Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\manoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KAMROOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -213,17 +215,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj": {
-                "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Core\\Mobile_Core.csproj"
+              "D:\\Mobile API\\Mobile_Core\\Mobile_Core.csproj": {
+                "projectPath": "D:\\Mobile API\\Mobile_Core\\Mobile_Core.csproj"
               },
-              "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj": {
-                "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj"
+              "D:\\Mobile API\\Mobile_Utility\\Mobile_Utility.csproj": {
+                "projectPath": "D:\\Mobile API\\Mobile_Utility\\Mobile_Utility.csproj"
               }
             }
           }
@@ -273,24 +276,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj": {
+    "D:\\Mobile API\\Mobile_Utility\\Mobile_Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj",
+        "projectUniqueName": "D:\\Mobile API\\Mobile_Utility\\Mobile_Utility.csproj",
         "projectName": "Mobile_Utility",
-        "projectPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\Mobile_Utility.csproj",
-        "packagesPath": "C:\\Users\\manoj\\.nuget\\packages\\",
-        "outputPath": "D:\\Manoj Patel\\Project\\Mobile_HRMS_API_GitHub\\Mobile_Utility\\obj\\",
+        "projectPath": "D:\\Mobile API\\Mobile_Utility\\Mobile_Utility.csproj",
+        "packagesPath": "C:\\Users\\KAMROOP\\.nuget\\packages\\",
+        "outputPath": "D:\\Mobile API\\Mobile_Utility\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\manoj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KAMROOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -299,6 +302,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -338,7 +342,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

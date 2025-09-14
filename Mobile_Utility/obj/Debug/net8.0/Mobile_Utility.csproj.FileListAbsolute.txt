@@ -21,3 +21,15 @@ D:\Manoj Patel\Project\Mobile_HRMS_API_GitHub\Mobile_Utility\obj\Debug\net8.0\Mo
 D:\Manoj Patel\Project\Mobile_HRMS_API_GitHub\Mobile_Utility\obj\Debug\net8.0\refint\Mobile_Utility.dll
 D:\Manoj Patel\Project\Mobile_HRMS_API_GitHub\Mobile_Utility\obj\Debug\net8.0\Mobile_Utility.pdb
 D:\Manoj Patel\Project\Mobile_HRMS_API_GitHub\Mobile_Utility\obj\Debug\net8.0\ref\Mobile_Utility.dll
+D:\Mobile API\Mobile_Utility\bin\Debug\net8.0\Mobile_Utility.deps.json
+D:\Mobile API\Mobile_Utility\bin\Debug\net8.0\Mobile_Utility.dll
+D:\Mobile API\Mobile_Utility\bin\Debug\net8.0\Mobile_Utility.pdb
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\Mobile_Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\Mobile_Utility.AssemblyInfoInputs.cache
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\Mobile_Utility.AssemblyInfo.cs
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\Mobile_Utility.csproj.CoreCompileInputs.cache
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\Mobile_Utility.sourcelink.json
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\Mobile_Utility.dll
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\refint\Mobile_Utility.dll
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\Mobile_Utility.pdb
+D:\Mobile API\Mobile_Utility\obj\Debug\net8.0\ref\Mobile_Utility.dll

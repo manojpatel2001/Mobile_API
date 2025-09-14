@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Mobile_API.Services;
 using Mobile_Core.EmployeeAttedance;
 using Mobile_Infrastructure.Interface;
 using Mobile_Infrastructure.Interface.EmployeeAttedance;
@@ -15,20 +16,43 @@ namespace Mobile_API.Controllers.EmployeeAttendance
     public class EmployeeAttendanceAPIController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly FileUploadService _fileUploadService;
 
-        public EmployeeAttendanceAPIController(IUnitOfWork unitOfWork)
+        public EmployeeAttendanceAPIController(IUnitOfWork unitOfWork,
+                                  FileUploadService fileUploadService)
         {
             _unitOfWork = unitOfWork;
+            _fileUploadService = fileUploadService;
         }
 
         [HttpPost("InsertAttendance")]
-        public async Task<APIResponse> InsertAttendance([FromBody] EmployeeAttendanceVM model)
+        public async Task<APIResponse> InsertAttendance(EmployeeAttendanceVM model)
         {
             try
             {
                 if (model == null || model.EmployeeId <= 0)
                     return new APIResponse { Status = false, ResponseMessage = "Attendance details cannot be null." };
                 
+                if (model.DocumentFile != null)
+                {
+                    if (model.DocumentFile.Length > 0)
+                    {
+
+                        var folder = $"uploads/attedance_selfie";
+                        var fileUrl = await _fileUploadService.UploadAndReplaceDocumentAsync(model.DocumentFile, folder, null);
+                        if (string.IsNullOrEmpty(fileUrl))
+                        {
+                            return new APIResponse { Status = false, ResponseMessage = "Some thing went wrong. Please try again later." };
+
+                        }
+
+                        model.DocumentPath= fileUrl;
+                        model.DocumentName = model.DocumentFile.FileName;
+                        model.FileSize = model.DocumentFile.Length;
+                    }
+
+                }
+
                 var result = await _unitOfWork.EmployeeAttendanceRepository.InsertAttendance(model);
                 return new APIResponse
                 {

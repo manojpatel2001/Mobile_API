@@ -32,7 +32,10 @@ namespace Mobile_Infrastructure.Repository.EmployeeAttedance
                         @Lat = {attendance.Lat},
                         @Long = {attendance.Long},
                         @LocationName = {attendance.LocationName},
-                        @PunchTypeId = {attendance.PunchTypeId}
+                        @PunchTypeId = {attendance.PunchTypeId},
+                        @DocumentName = {attendance.DocumentName},
+                        @FileSize = {attendance.FileSize},
+                        @DocumentPath = {attendance.DocumentPath}
                 ").ToListAsync();
 
                 return result.FirstOrDefault() ?? new SP_Response { Success = false, Message = "Something went wrong!" };
