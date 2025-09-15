@@ -71,13 +71,12 @@ namespace Mobile_Infrastructure.Repository.AuthManage
             try
             {
                 _logger.LogInformation("Retrieving login data for user: {UserName}", userLogin.UserName);
-
                 var result = await _db.Set<GetLoginData>().FromSqlInterpolated($@"
-                    EXEC USP_Mobile_UserMaster 
-                        @Status = {"GetLoginData"},
-                        @UserName = {userLogin.UserName},
-                    @Password = {userLogin.Password}
-                      ").ToListAsync();
+            EXEC USP_Mobile_UserMaster 
+                @Status = {"GetLoginData"},
+                @UserName = {userLogin.UserName},
+                @Password = {userLogin.Password}
+              ").ToListAsync();
 
                 var loginData = result.FirstOrDefault();
 
