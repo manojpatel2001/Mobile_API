@@ -52,6 +52,7 @@ namespace Mobile_API.Controllers.EmployeeAttendance
                     }
 
                 }
+               
 
                 var result = await _unitOfWork.EmployeeAttendanceRepository.InsertAttendance(model);
                 return new APIResponse

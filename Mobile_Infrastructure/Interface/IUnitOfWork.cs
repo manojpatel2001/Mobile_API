@@ -13,7 +13,7 @@ namespace Mobile_Infrastructure.Interface
     {
         ILoginRepository LoginRepository { get; }
         IEmployeeAttendanceRepository EmployeeAttendanceRepository { get; }
-        IEmpployeeManageRepository EmpployeeManageRepository { get; }
+        IEmployeeManageRepository EmpployeeManageRepository { get; }
 
     }
 }

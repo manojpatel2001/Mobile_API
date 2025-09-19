@@ -1,13 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{6B7D861F-9606-4318-9CB8-E3E78062F567}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F219C4A3-60BE-4C00-B024-9E3A815EF4CD}"
+	ProjectSection(SolutionItems) = preProject
+		..\Mobile_API\Controllers\EmployeeManage\EmpployeeManageAPIController.cs = ..\Mobile_API\Controllers\EmployeeManage\EmpployeeManageAPIController.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile_API", "..\Mobile_API\Mobile_API.csproj", "{99EBC165-E17B-4B2D-AC05-A73732F1A74A}"
 EndProject

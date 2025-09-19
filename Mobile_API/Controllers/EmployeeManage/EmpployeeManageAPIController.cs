@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Mobile_API.Controllers.AuthManage;
 using Mobile_API.Services;
 using Mobile_Core.CommonClass;
+using Mobile_Core.ViewModel;
 using Mobile_Infrastructure.Interface;
 using Mobile_Utility;
 
@@ -65,5 +66,39 @@ namespace Mobile_API.Controllers.EmployeeManage
                 return new APIResponse { Status = false, Data = ex.Message, ResponseMessage = "Unable to  update employee profile. Please try again later." };
             }
         }
+
+        [HttpPost("GetSalarySalaryDetails")]
+        public async Task<APIResponse> GetSalarySalaryDetails(SalarysDetailsParameter vm)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmpployeeManageRepository.GetSalarySalaryDetails(vm);
+                if (data == null || !data.Any())
+                {
+                    return new APIResponse()
+                    {
+                        Status = false,
+                        ResponseMessage = "No record found"
+                    };
+                }
+
+                return new APIResponse()
+                {
+                    Status = true,
+                    Data = data,
+                    ResponseMessage = "Record fetched successfully"
+                };
+            }
+            catch (Exception err)
+            {
+                return new APIResponse
+                {
+                    Status = false,
+                    Data = null,
+                    ResponseMessage = $"Error: {err.Message}"
+                };
+            }
+        }
+
     }
 }

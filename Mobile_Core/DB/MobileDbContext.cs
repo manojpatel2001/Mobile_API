@@ -2,6 +2,7 @@
 using Mobile_Core.AuthManage;
 using Mobile_Core.CommonClass;
 using Mobile_Core.EmployeeAttedance;
+using Mobile_Core.ViewModel;
 using Mobile_Core.ViewModel.Employee;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace Mobile_Core.DB
             modelBuilder.Entity<EmployeeAttendanceStatusVM>().HasNoKey();
             modelBuilder.Entity<AutoListVM>().HasNoKey();
             modelBuilder.Entity<vmGetEmployeeById>().HasNoKey();
+            modelBuilder.Entity<vmGetSalarySalaryDetails>().HasNoKey();
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

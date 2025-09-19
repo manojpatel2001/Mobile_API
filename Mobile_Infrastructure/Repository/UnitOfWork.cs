@@ -34,14 +34,14 @@ namespace Mobile_Infrastructure.Repository
             // Initialize repository with logger
             LoginRepository = new LoginRepository(_dbContext, _loginLogger);
             EmployeeAttendanceRepository = new EmployeeAttendanceRepository(_dbContext);
-            EmpployeeManageRepository = new EmpployeeManageRepository(_dbContext);
+            EmpployeeManageRepository = new EmployeeManageRepository(_dbContext);
 
             _logger.LogInformation("UnitOfWork initialized successfully");
         }
 
         public ILoginRepository LoginRepository { get; set; }
         public IEmployeeAttendanceRepository EmployeeAttendanceRepository { get; set; }
-        public IEmpployeeManageRepository EmpployeeManageRepository { get; set; }
+        public IEmployeeManageRepository EmpployeeManageRepository { get; set; }
         
 
         // Optional: Add disposal logging
