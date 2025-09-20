@@ -202,7 +202,7 @@ namespace Mobile_API.Controllers.AuthManage
             }
         }
         [Authorize]
-        [HttpPut("UpdateFCMToken")]
+        [HttpPost("UpdateFCMToken")]
         public async Task<APIResponse> UpdateFCMToken (Common_Parameter model)
         {
             try
@@ -224,7 +224,7 @@ namespace Mobile_API.Controllers.AuthManage
         }
 
         [Authorize]
-        [HttpPut("ChangePassword")]
+        [HttpPost("ChangePassword")]
         public async Task<APIResponse> ChangePassword(ChangePassword model)
         {
             try
