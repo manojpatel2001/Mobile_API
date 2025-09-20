@@ -1,4 +1,5 @@
 ﻿using Mobile_Core.CommonClass;
+using Mobile_Core.ViewModel;
 using Mobile_Core.ViewModel.Employee;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,6 @@ namespace Mobile_Infrastructure.Interface.EmpployeeManage
     {
         Task<vmGetEmployeeById?> GetEmployeeById(int Id);
         Task<SP_Response> UpdateEmployeeProfile(EmployeeProfile model);
+        Task<List<vmGetSalarySalaryDetails>> GetSalarySalaryDetails(SalarysDetailsParameter vm);
     }
 }
