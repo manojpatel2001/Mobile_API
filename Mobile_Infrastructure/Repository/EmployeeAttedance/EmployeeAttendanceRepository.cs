@@ -78,7 +78,6 @@ namespace Mobile_Infrastructure.Repository.EmployeeAttedance
                 return new List<AutoListVM>();
             }
         }
-
         public async Task<SP_Response> InsertLiveLocation(MobileUserLiveLocation location)
         {
             try
