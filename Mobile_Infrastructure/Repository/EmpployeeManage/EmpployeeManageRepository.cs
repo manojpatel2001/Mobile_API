@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Mobile_Core.CommonClass;
 using Mobile_Core.DB;
+using Mobile_Core.ViewModel;
 using Mobile_Core.ViewModel.Employee;
 using Mobile_Infrastructure.Interface.EmployeeAttedance;
 using Mobile_Infrastructure.Interface.EmpployeeManage;
@@ -54,6 +55,19 @@ namespace Mobile_Infrastructure.Repository.EmpployeeManage
             catch (Exception)
             {
                 return new SP_Response { Success = false, Message = "Something went wrong!" };
+            }
+        }
+        public async Task<List<vmGetSalarySalaryDetails>> GetSalarySalaryDetails(SalarysDetailsParameter vm)
+        {
+            try
+            {
+
+                var result = await _db.Set<vmGetSalarySalaryDetails>().FromSqlInterpolated($"EXEC SP_Mobile_GetSalarySalaryDetails @EmployeeId={vm.EmployeeId},@Month={vm.Month},@Year={vm.Year}").ToListAsync();
+                return result;
+            }
+            catch
+            {
+                return new List<vmGetSalarySalaryDetails>();
             }
         }
     }
