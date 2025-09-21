@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Mobile_Infrastructure.Interface.EmpployeeManage
 {
-    public interface IEmpployeeManageRepository
+    public interface IEmployeeManageRepository
     {
         Task<vmGetEmployeeById?> GetEmployeeById(int Id);
         Task<SP_Response> UpdateEmployeeProfile(EmployeeProfile model);
-        Task<List<vmGetSalarySalaryDetails>> GetSalarySalaryDetails(SalarysDetailsParameter vm);
+       
     }
 }

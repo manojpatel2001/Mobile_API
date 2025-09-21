@@ -12,7 +12,7 @@ namespace Mobile_API.Controllers.EmployeeManage
 {
     [Route("api/[controller]")]
     [ApiController]
-   // [Authorize]
+   [Authorize]
     public class EmpployeeManageAPIController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -67,37 +67,7 @@ namespace Mobile_API.Controllers.EmployeeManage
             }
         }
 
-        [HttpPost("GetSalarySalaryDetails")]
-        public async Task<APIResponse> GetSalarySalaryDetails(SalarysDetailsParameter vm)
-        {
-            try
-            {
-                var data = await _unitOfWork.EmpployeeManageRepository.GetSalarySalaryDetails(vm);
-                if (data == null || !data.Any())
-                {
-                    return new APIResponse()
-                    {
-                        Status = false,
-                        ResponseMessage = "No record found"
-                    };
-                }
+       
 
-                return new APIResponse()
-                {
-                    Status = true,
-                    Data = data,
-                    ResponseMessage = "Record fetched successfully"
-                };
-            }
-            catch (Exception err)
-            {
-                return new APIResponse
-                {
-                    Status = false,
-                    Data = null,
-                    ResponseMessage = $"Error: {err.Message}"
-                };
-            }
-        }
     }
 }

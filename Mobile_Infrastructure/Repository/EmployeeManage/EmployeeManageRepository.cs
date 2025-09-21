@@ -15,11 +15,11 @@ using System.Threading.Tasks;
 
 namespace Mobile_Infrastructure.Repository.EmpployeeManage
 {
-    public class EmpployeeManageRepository : IEmpployeeManageRepository
+    public class EmployeeManageRepository : IEmployeeManageRepository
     {
         private readonly MobileDbcontext _db;
         
-        public EmpployeeManageRepository(MobileDbcontext db)
+        public EmployeeManageRepository(MobileDbcontext db)
         {
             _db = db; 
         }
@@ -57,18 +57,6 @@ namespace Mobile_Infrastructure.Repository.EmpployeeManage
                 return new SP_Response { Success = false, Message = "Something went wrong!" };
             }
         }
-        public async Task<List<vmGetSalarySalaryDetails>> GetSalarySalaryDetails(SalarysDetailsParameter vm)
-        {
-            try
-            {
-
-                var result = await _db.Set<vmGetSalarySalaryDetails>().FromSqlInterpolated($"EXEC SP_Mobile_GetSalarySalaryDetails @EmployeeId={vm.EmployeeId},@Month={vm.Month},@Year={vm.Year}").ToListAsync();
-                return result;
-            }
-            catch
-            {
-                return new List<vmGetSalarySalaryDetails>();
-            }
-        }
+       
     }
 }

@@ -3,9 +3,11 @@ using Mobile_Core.DB;
 using Mobile_Infrastructure.Interface;
 using Mobile_Infrastructure.Interface.AuthManage;
 using Mobile_Infrastructure.Interface.EmployeeAttedance;
+using Mobile_Infrastructure.Interface.EmployeeManage;
 using Mobile_Infrastructure.Interface.EmpployeeManage;
 using Mobile_Infrastructure.Repository.AuthManage;
 using Mobile_Infrastructure.Repository.EmployeeAttedance;
+using Mobile_Infrastructure.Repository.EmployeeManage;
 using Mobile_Infrastructure.Repository.EmpployeeManage;
 using System;
 using System.Collections.Generic;
@@ -34,14 +36,16 @@ namespace Mobile_Infrastructure.Repository
             // Initialize repository with logger
             LoginRepository = new LoginRepository(_dbContext, _loginLogger);
             EmployeeAttendanceRepository = new EmployeeAttendanceRepository(_dbContext);
-            EmpployeeManageRepository = new EmpployeeManageRepository(_dbContext);
+            EmpployeeManageRepository = new EmployeeManageRepository(_dbContext);
+            EmployeeReportRepository = new EmployeeReportRepository(_dbContext);
 
             _logger.LogInformation("UnitOfWork initialized successfully");
         }
 
         public ILoginRepository LoginRepository { get; set; }
         public IEmployeeAttendanceRepository EmployeeAttendanceRepository { get; set; }
-        public IEmpployeeManageRepository EmpployeeManageRepository { get; set; }
+        public IEmployeeManageRepository EmpployeeManageRepository { get; set; }
+        public IEmployeeReportRepository EmployeeReportRepository { get; set; }
         
 
         // Optional: Add disposal logging
