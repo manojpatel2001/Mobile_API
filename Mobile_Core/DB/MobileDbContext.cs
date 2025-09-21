@@ -4,6 +4,7 @@ using Mobile_Core.CommonClass;
 using Mobile_Core.EmployeeAttedance;
 using Mobile_Core.ViewModel;
 using Mobile_Core.ViewModel.Employee;
+using Mobile_Core.ViewModel.EmployeeReport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,11 @@ namespace Mobile_Core.DB
             modelBuilder.Entity<AutoListVM>().HasNoKey();
             modelBuilder.Entity<vmGetEmployeeById>().HasNoKey();
             modelBuilder.Entity<vmGetSalarySalaryDetails>().HasNoKey();
+            modelBuilder.Entity<vmGetTodayBirthdaysByCompany>().HasNoKey();
+            modelBuilder.Entity<vmGetUpcomingHolidays>().HasNoKey();
+            modelBuilder.Entity<vmAttedanceCalanderDaysSummary>().HasNoKey();
+            modelBuilder.Entity<vmAttedanceCalanderDays>().HasNoKey();
+            modelBuilder.Entity<vmGetMonthlyAttendanceDetails>().HasNoKey();
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
