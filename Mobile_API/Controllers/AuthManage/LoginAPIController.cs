@@ -61,7 +61,7 @@ namespace Mobile_API.Controllers.AuthManage
                 {
                     _logger.LogWarning("User authentication failed for: {UserName}. Reason: {Message}",
                         user.UserName, login.Message);
-                    return new APIResponse { Status = false, ResponseMessage = login.Message };
+                    return new APIResponse { Status = false, ResponseMessage = login.Message,Data=login.DownloadLink };
                 }
 
                 _logger.LogInformation("User authentication successful for: {UserName}", user.UserName);

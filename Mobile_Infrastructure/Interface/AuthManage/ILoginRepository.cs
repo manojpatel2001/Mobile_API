@@ -11,7 +11,7 @@ namespace Mobile_Infrastructure.Interface.AuthManage
 {
     public interface ILoginRepository
     {
-        Task<SP_Response> AuthenticateUser(UserLogin userLogin);
+        Task<Login_Response> AuthenticateUser(UserLogin userLogin);
         Task<GetLoginData?> GetLoginData(UserLogin userLogin);
         Task<SP_Response> UpdateFCMToken (Common_Parameter parameter);
         Task<SP_Response> ChangePassword(ChangePassword parameter);
