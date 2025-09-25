@@ -7,6 +7,7 @@ using Mobile_Core.ViewModel.Employee;
 using Mobile_Infrastructure.Interface.EmployeeAttedance;
 using Mobile_Infrastructure.Interface.EmpployeeManage;
 using Mobile_Infrastructure.Repository.AuthManage;
+using Mobile_Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +58,46 @@ namespace Mobile_Infrastructure.Repository.EmpployeeManage
                 return new SP_Response { Success = false, Message = "Something went wrong!" };
             }
         }
-       
+
+        public async Task<APIResponse> AddAppVersion(AppVersionModel model)
+        {
+            try
+            {
+                // Use FromSqlInterpolated to call the stored procedure with parameters
+                var result = await _db.Set<SP_Response>()
+                    .FromSqlInterpolated($@"
+                EXEC USP_Mobile_AppVersion
+                    @Action = 'Insert',
+                    @AppVersion = {model.AppVersion},
+                    @Description = {model.Description},
+                    @FromDate = {model.FromDate},
+                    @AppType = {model.AppType},
+                    @DocumentName = {model.DocumentName},
+                    @FileSize = {model.FileSize},
+                    @DocumentPath = {model.DocumentPath}
+            ")
+                    .ToListAsync();
+
+                var data = result.FirstOrDefault();
+
+                if (data == null)
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "Some thing went wrong!" };
+                }
+                else
+                {
+                    return new APIResponse { Status = data.Success, ResponseMessage = data.Message };
+
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception (recommended for debugging)
+                // _logger.LogError(ex, "Error in ManageAppVersion");
+                return new APIResponse { Status = false, ResponseMessage = "Some thing went wrong!"};
+            }
+        }
+
+
     }
 }

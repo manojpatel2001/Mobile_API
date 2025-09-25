@@ -24,19 +24,21 @@ namespace Mobile_Infrastructure.Repository.AuthManage
             _logger = logger;
         }
 
-        public async Task<SP_Response> AuthenticateUser(UserLogin userLogin)
+        public async Task<Login_Response> AuthenticateUser(UserLogin userLogin)
         {
             try
             {
                 _logger.LogInformation("Attempting to authenticate user: {UserName} with DeviceId: {DeviceId}",
                     userLogin.UserName, userLogin.DeviceId);
 
-                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
+                var result = await _db.Set<Login_Response>().FromSqlInterpolated($@"
                      EXEC USP_Mobile_UserMaster 
                     @Status = {"Authenticate"},
                     @UserName = {userLogin.UserName},
                     @Password = {userLogin.Password},
-                    @DeviceId = {userLogin.DeviceId}
+                    @DeviceId = {userLogin.DeviceId},
+                    @AppVersion = {userLogin.AppVersion},
+                    @AppType = {userLogin.AppType}
                      ").ToListAsync();
 
                 var data = result.FirstOrDefault();
@@ -50,19 +52,19 @@ namespace Mobile_Infrastructure.Repository.AuthManage
                     _logger.LogWarning("User authentication failed for: {UserName}", userLogin.UserName);
                 }
 
-                return result.FirstOrDefault() ?? new SP_Response { Success = false, Message = "Authentication failed." };
+                return result.FirstOrDefault() ?? new Login_Response { Success = false, Message = "Authentication failed." };
             }
             catch (SqlException sqlEx)
             {
                 _logger.LogError(sqlEx, "SQL error occurred while authenticating user: {UserName}. Error: {ErrorMessage}",
                     userLogin.UserName, sqlEx.Message);
-                return new SP_Response { Success = false, Message = "Database error occurred during authentication." };
+                return new Login_Response { Success = false, Message = "Database error occurred during authentication." };
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Unexpected error occurred while authenticating user: {UserName}. Error: {ErrorMessage}",
                     userLogin.UserName, ex.Message);
-                return new SP_Response { Success = false, Message = "An unexpected error occurred during authentication." };
+                return new Login_Response { Success = false, Message = "An unexpected error occurred during authentication." };
             }
         }
 

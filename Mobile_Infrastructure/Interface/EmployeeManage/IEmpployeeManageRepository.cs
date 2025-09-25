@@ -1,6 +1,7 @@
 ﻿using Mobile_Core.CommonClass;
 using Mobile_Core.ViewModel;
 using Mobile_Core.ViewModel.Employee;
+using Mobile_Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,6 @@ namespace Mobile_Infrastructure.Interface.EmpployeeManage
     {
         Task<vmGetEmployeeById?> GetEmployeeById(int Id);
         Task<SP_Response> UpdateEmployeeProfile(EmployeeProfile model);
-       
+        Task<APIResponse> AddAppVersion(AppVersionModel model);
     }
 }

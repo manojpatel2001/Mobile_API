@@ -39,6 +39,7 @@ namespace Mobile_Core.DB
             modelBuilder.Entity<vmAttedanceCalanderDaysSummary>().HasNoKey();
             modelBuilder.Entity<vmAttedanceCalanderDays>().HasNoKey();
             modelBuilder.Entity<vmGetMonthlyAttendanceDetails>().HasNoKey();
+            modelBuilder.Entity<Login_Response>().HasNoKey();
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

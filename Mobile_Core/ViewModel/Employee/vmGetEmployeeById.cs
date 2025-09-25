@@ -70,4 +70,5 @@ namespace Mobile_Core.ViewModel.Employee
         public bool? IsPermissionPunchInOut { get; set; } = false;
 
     }
+
 }
