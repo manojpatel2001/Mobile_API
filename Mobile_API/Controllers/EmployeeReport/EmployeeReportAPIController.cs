@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mobile_API.Services;
 using Mobile_Core.CommonClass;
+using Mobile_Core.EmployeeAttedance;
 using Mobile_Core.ViewModel;
 using Mobile_Infrastructure.Interface;
 using Mobile_Utility;
@@ -131,6 +132,50 @@ namespace Mobile_API.Controllers.EmployeeReport
             catch (Exception ex)
             {
                 return new APIResponse { Status = false, Data = ex.Message, ResponseMessage = "Unable to retrieve records. Please try again later." };
+            }
+        }
+
+        [HttpPost("CreateAttendanceRegularization")]
+        public async Task<APIResponse> CreateAttendanceRegularization(AttendanceRegularization model)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeReportRepository.CreateAttendanceRegularization(model);
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve records. Please try again later." };
+            }
+        }
+
+        [HttpPost("UpdateAttendanceRegularization")]
+        public async Task<APIResponse> UpdateAttendanceRegularization(AttendanceRegularization model)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeReportRepository.UpdateAttendanceRegularization(model);
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve records. Please try again later." };
+            }
+        }
+        [HttpPost("GetAllAprovalApplication")]
+        public async Task<APIResponse> GetAllAprovalApplication(Common_Parameter model)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeReportRepository.GetAllAprovalApplication(model);
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve records. Please try again later." };
             }
         }
     }

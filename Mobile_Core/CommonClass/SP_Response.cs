@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,8 @@ namespace Mobile_Core.CommonClass
 {
     public class SP_Response
     {
-        public bool Success {  get; set; }  
+        public bool Success {  get; set; }
+       
         public string Message {  get; set; }  
     }
 }

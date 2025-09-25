@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Mobile_Core.CommonClass;
 using Mobile_Core.DB;
+using Mobile_Core.EmployeeAttedance;
 using Mobile_Core.ViewModel;
 using Mobile_Core.ViewModel.EmployeeReport;
 using Mobile_Infrastructure.Interface.EmployeeManage;
@@ -131,6 +132,127 @@ namespace Mobile_Infrastructure.Repository.EmployeeManage
                 return new List<vmGetMonthlyAttendanceDetails>();
             }
         }
+
+
+        public async Task<APIResponse> CreateAttendanceRegularization(AttendanceRegularization model)
+        {
+            try
+            {
+                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
+                EXEC SP_Mobile_AttendanceRegularization
+                    @Action = {"INSERT"},
+                    @EmpId = {model.EmpId},
+                    @FullName = {model.FullName},
+                    @BranchName = {model.BranchName},
+                    @ForDate = {model.ForDate},
+                    @ShiftTime = {model.ShiftTime},
+                    @InTime = {model.InTime},
+                    @OutTime = {model.OutTime},
+                    @Day = {model.Day},
+                    @Reason = {model.Reason},
+                    @Status = {model.Status},
+                    @CreatedBy = {model.CreatedBy}
+            ").ToListAsync();
+
+                var data = result?.FirstOrDefault() ?? null;
+                if (data!=null)
+                {
+                    return new APIResponse { Status = data.Success, ResponseMessage = data.Message};
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+                }
+                
+            }
+            catch
+            {
+                return new APIResponse { Status = false,ResponseMessage="Something went wrong" };
+            }
+        }
+
+        public async Task<APIResponse> UpdateAttendanceRegularization(AttendanceRegularization model)
+        {
+            try
+            {
+                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
+                EXEC SP_Mobile_AttendanceRegularization
+                    @Action = {"UPDATE"},
+                    @Id ={model.AttendanceRegularizationId}, 
+                    @EmpId = {model.EmpId},
+                    @FullName = {model.FullName},
+                    @BranchName = {model.BranchName},
+                    @ForDate = {model.ForDate},
+                    @ShiftTime = {model.ShiftTime},
+                    @InTime = {model.InTime},
+                    @OutTime = {model.OutTime},
+                    @Day = {model.Day},
+                    @Reason = {model.Reason},
+                    @Status = {model.Status},
+                    @CreatedBy = {model.CreatedBy}
+            ").ToListAsync();
+
+                var data = result?.FirstOrDefault() ?? null;
+                if (data != null)
+                {
+                    return new APIResponse { Status = data.Success, ResponseMessage = data.Message };
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+                }
+
+            }
+            catch
+            {
+               return new APIResponse { Status = false,ResponseMessage="Something went wrong" };
+            }
+        }
+        public async Task<APIResponse> GetAllAprovalApplication(Common_Parameter commonParameter)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@UserId", commonParameter.UserId);
+                    queryParameters.Add("@Status", commonParameter.Status);
+
+                    using (var multi = await connection.QueryMultipleAsync(
+                        "SP_Mobile_GetAllAprovalApplication",
+                        queryParameters,
+                        commandType: CommandType.StoredProcedure))
+                    {
+                        var leaveApplications = (await multi.ReadAsync<LeaveApplicationViewModel>()).ToList();
+                        var attendanceRegularizations = (await multi.ReadAsync<AttendanceRegularizationViewModel>()).ToList();
+
+                        var responseData = new 
+                        {
+                            LeaveApplications = leaveApplications,
+                            AttendanceRegularizations = attendanceRegularizations
+                        };
+
+                        return new APIResponse
+                        {
+                            Status = true,
+                            Data = responseData,
+                            ResponseMessage = "Records fetched successfully."
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log exception here if needed
+                return new APIResponse
+                {
+                    Status = false,
+                    ResponseMessage = $"Error retrieving records: {ex.Message}"
+                };
+            }
+        }
+
 
     }
 }

@@ -9,4 +9,7 @@
         public int? TotalLeaves { get; set; }
         public int? AttendancePercentage { get; set; }
     }
+
+   
+
 }
