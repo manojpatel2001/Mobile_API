@@ -38,6 +38,7 @@ namespace Mobile_Infrastructure.Repository
             EmployeeAttendanceRepository = new EmployeeAttendanceRepository(_dbContext);
             EmpployeeManageRepository = new EmployeeManageRepository(_dbContext);
             EmployeeReportRepository = new EmployeeReportRepository(_dbContext);
+            EmployeeLeaveManageRepository = new EmployeeLeaveManageRepository(_dbContext);
 
             _logger.LogInformation("UnitOfWork initialized successfully");
         }
@@ -46,6 +47,7 @@ namespace Mobile_Infrastructure.Repository
         public IEmployeeAttendanceRepository EmployeeAttendanceRepository { get; set; }
         public IEmployeeManageRepository EmpployeeManageRepository { get; set; }
         public IEmployeeReportRepository EmployeeReportRepository { get; set; }
+        public IEmployeeLeaveManageRepository EmployeeLeaveManageRepository { get; set; }
         
 
         // Optional: Add disposal logging

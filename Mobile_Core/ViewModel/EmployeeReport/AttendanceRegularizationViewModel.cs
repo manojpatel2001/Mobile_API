@@ -2,6 +2,7 @@
 {
     public class AttendanceRegularizationViewModel
     {
+        public string? ApplicationType { get; set; }
         public int? AttendanceRegularizationId { get; set; }
         public int? EmployeeId { get; set; }
         public string? EmployeeCode { get; set; }

@@ -134,80 +134,7 @@ namespace Mobile_Infrastructure.Repository.EmployeeManage
         }
 
 
-        public async Task<APIResponse> CreateAttendanceRegularization(AttendanceRegularization model)
-        {
-            try
-            {
-                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
-                EXEC SP_Mobile_AttendanceRegularization
-                    @Action = {"INSERT"},
-                    @EmpId = {model.EmpId},
-                    @FullName = {model.FullName},
-                    @BranchName = {model.BranchName},
-                    @ForDate = {model.ForDate},
-                    @ShiftTime = {model.ShiftTime},
-                    @InTime = {model.InTime},
-                    @OutTime = {model.OutTime},
-                    @Day = {model.Day},
-                    @Reason = {model.Reason},
-                    @Status = {model.Status},
-                    @CreatedBy = {model.CreatedBy}
-            ").ToListAsync();
-
-                var data = result?.FirstOrDefault() ?? null;
-                if (data!=null)
-                {
-                    return new APIResponse { Status = data.Success, ResponseMessage = data.Message};
-                }
-                else
-                {
-                    return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
-                }
-                
-            }
-            catch
-            {
-                return new APIResponse { Status = false,ResponseMessage="Something went wrong" };
-            }
-        }
-
-        public async Task<APIResponse> UpdateAttendanceRegularization(AttendanceRegularization model)
-        {
-            try
-            {
-                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
-                EXEC SP_Mobile_AttendanceRegularization
-                    @Action = {"UPDATE"},
-                    @Id ={model.AttendanceRegularizationId}, 
-                    @EmpId = {model.EmpId},
-                    @FullName = {model.FullName},
-                    @BranchName = {model.BranchName},
-                    @ForDate = {model.ForDate},
-                    @ShiftTime = {model.ShiftTime},
-                    @InTime = {model.InTime},
-                    @OutTime = {model.OutTime},
-                    @Day = {model.Day},
-                    @Reason = {model.Reason},
-                    @Status = {model.Status},
-                    @CreatedBy = {model.CreatedBy}
-            ").ToListAsync();
-
-                var data = result?.FirstOrDefault() ?? null;
-                if (data != null)
-                {
-                    return new APIResponse { Status = data.Success, ResponseMessage = data.Message };
-                }
-                else
-                {
-                    return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
-                }
-
-            }
-            catch
-            {
-               return new APIResponse { Status = false,ResponseMessage="Something went wrong" };
-            }
-        }
+      
         public async Task<APIResponse> GetAllAprovalApplication(Common_Parameter commonParameter)
         {
             try
@@ -253,6 +180,35 @@ namespace Mobile_Infrastructure.Repository.EmployeeManage
             }
         }
 
+        public async Task<APIResponse> GetEmployeeDashboardCountDetails(int EmployeeId)
+        {
+            try
+            {
+                var result = await _db.Set<EmployeeDashboardCountModel>()
+                    .FromSqlInterpolated($@"
+                  EXEC SP_Mobile_GetEmployeeDashboardCountDetails
+                    @EmployeeId = {EmployeeId}
+              ")
+                    .ToListAsync();
+
+                if (!result.Any())
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "No record found!" };
+                }
+                else
+                {
+                    return new APIResponse { Status = true, Data = result, ResponseMessage = "Record fetched successfully!" };
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return new APIResponse { Status = false, ResponseMessage = "Some thing went wrong!" };
+            }
+        }
+
+       
 
     }
 }

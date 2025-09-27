@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mobile_API.Services;
 using Mobile_Core.EmployeeAttedance;
+using Mobile_Core.ViewModel.EmployeeReport;
 using Mobile_Infrastructure.Interface;
 using Mobile_Infrastructure.Interface.EmployeeAttedance;
 using Mobile_Infrastructure.Repository;
@@ -118,6 +119,67 @@ namespace Mobile_API.Controllers.EmployeeAttendance
             catch
             {
                 return new APIResponse { Status = false, ResponseMessage = "Unable to insert live location. Please try again later." };
+            }
+        }
+
+        [HttpPost("CreateAttendanceRegularization")]
+        public async Task<APIResponse> CreateAttendanceRegularization(AttendanceRegularization model)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeAttendanceRepository.CreateAttendanceRegularization(model);
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to insert data. Please try again later." };
+            }
+        }
+
+        [HttpGet("GetDay")]
+        public async Task<APIResponse> GetDay()
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeAttendanceRepository.GetDay();
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve records. Please try again later." };
+            }
+        }
+
+        [HttpPost("GetAttendanceByDate")]
+        public async Task<APIResponse> GetAttendanceByDate(AttendanceRegularization model)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeAttendanceRepository.GetAttendanceByDate(model);
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve records. Please try again later." };
+            }
+        }
+
+        [HttpPost("AttedanceApproveOrReject")]
+        public async Task<APIResponse> AttedanceApproveOrReject(ApprovalModel model)
+        {
+            try
+            {
+               
+                    var data = await _unitOfWork.EmployeeAttendanceRepository.AttedanceApproveOrReject(model);
+                    return data;
+              
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to  approved/reject. Please try again later." };
             }
         }
     }
