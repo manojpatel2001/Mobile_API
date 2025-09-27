@@ -2,6 +2,7 @@
 {
     public class LeaveApplicationViewModel
     {
+        public string? ApplicationType { get; set; }
         public int? LeaveApplicationId { get; set; }
         public int? EmployeeId { get; set; }
         public string? EmployeeCode { get; set; }

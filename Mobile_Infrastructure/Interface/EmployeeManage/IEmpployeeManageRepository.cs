@@ -15,5 +15,6 @@ namespace Mobile_Infrastructure.Interface.EmpployeeManage
         Task<vmGetEmployeeById?> GetEmployeeById(int Id);
         Task<SP_Response> UpdateEmployeeProfile(EmployeeProfile model);
         Task<APIResponse> AddAppVersion(AppVersionModel model);
+       
     }
 }

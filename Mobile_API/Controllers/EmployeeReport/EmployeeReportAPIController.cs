@@ -5,6 +5,7 @@ using Mobile_API.Services;
 using Mobile_Core.CommonClass;
 using Mobile_Core.EmployeeAttedance;
 using Mobile_Core.ViewModel;
+using Mobile_Core.ViewModel.EmployeeReport;
 using Mobile_Infrastructure.Interface;
 using Mobile_Utility;
 
@@ -12,7 +13,7 @@ namespace Mobile_API.Controllers.EmployeeReport
 {
     [Route("api/[controller]")]
     [ApiController]
-   // [Authorize]
+   [Authorize]
     public class EmployeeReportAPIController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -135,35 +136,7 @@ namespace Mobile_API.Controllers.EmployeeReport
             }
         }
 
-        [HttpPost("CreateAttendanceRegularization")]
-        public async Task<APIResponse> CreateAttendanceRegularization(AttendanceRegularization model)
-        {
-            try
-            {
-                var data = await _unitOfWork.EmployeeReportRepository.CreateAttendanceRegularization(model);
-
-                return data;
-            }
-            catch (Exception ex)
-            {
-                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve records. Please try again later." };
-            }
-        }
-
-        [HttpPost("UpdateAttendanceRegularization")]
-        public async Task<APIResponse> UpdateAttendanceRegularization(AttendanceRegularization model)
-        {
-            try
-            {
-                var data = await _unitOfWork.EmployeeReportRepository.UpdateAttendanceRegularization(model);
-
-                return data;
-            }
-            catch (Exception ex)
-            {
-                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve records. Please try again later." };
-            }
-        }
+      
         [HttpPost("GetAllAprovalApplication")]
         public async Task<APIResponse> GetAllAprovalApplication(Common_Parameter model)
         {
@@ -178,5 +151,22 @@ namespace Mobile_API.Controllers.EmployeeReport
                 return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve records. Please try again later." };
             }
         }
+
+        [HttpGet("GetEmployeeDashboardCountDetails/{EmployeeId}")]
+        public async Task<APIResponse> GetEmployeeCurrentStatus(int EmployeeId)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeReportRepository.GetEmployeeDashboardCountDetails(EmployeeId);
+
+                return data;
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve status. Please try again later." };
+            }
+        }
+
+       
     }
 }

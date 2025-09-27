@@ -16,6 +16,7 @@ namespace Mobile_Infrastructure.Interface
         IEmployeeAttendanceRepository EmployeeAttendanceRepository { get; }
         IEmployeeManageRepository EmpployeeManageRepository { get; }
         IEmployeeReportRepository EmployeeReportRepository { get; }
+        IEmployeeLeaveManageRepository EmployeeLeaveManageRepository { get; }
 
     }
 }

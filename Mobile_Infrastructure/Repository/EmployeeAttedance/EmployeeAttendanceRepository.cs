@@ -2,7 +2,9 @@
 using Mobile_Core.CommonClass;
 using Mobile_Core.DB;
 using Mobile_Core.EmployeeAttedance;
+using Mobile_Core.ViewModel.EmployeeReport;
 using Mobile_Infrastructure.Interface.EmployeeAttedance;
+using Mobile_Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -99,5 +101,120 @@ namespace Mobile_Infrastructure.Repository.EmployeeAttedance
                 return new SP_Response { Success = false, Message = "Something went wrong!" };
             }
         }
+
+        public async Task<APIResponse> CreateAttendanceRegularization(AttendanceRegularization model)
+        {
+            try
+            {
+                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
+                EXEC SP_Mobile_AttendanceRegularization
+                    @Action = {"INSERT"},
+                    @EmpId = {model.EmpId},
+                    @ForDate = {model.ForDate},               
+                    @Day = {model.Day},
+                    @Reason = {model.Reason},
+                    @CreatedBy = {model.CreatedBy}
+            ").ToListAsync();
+
+                var data = result?.FirstOrDefault() ?? null;
+                if (data != null)
+                {
+                    return new APIResponse { Status = data.Success, ResponseMessage = data.Message };
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
+
+        public async Task<APIResponse> GetDay()
+        {
+            try
+            {
+                var result = await _db.Set<vmGetDay>().FromSqlInterpolated($@"
+                EXEC SP_Mobile_AttendanceRegularization
+                    @Action = {"GetDay"}
+                    
+            ").ToListAsync();
+
+                if (result.Any())
+                {
+                    return new APIResponse { Status = true, Data = result, ResponseMessage = "Record fetched successfully!" };
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "No record found!" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
+
+        public async Task<APIResponse> GetAttendanceByDate(AttendanceRegularization model)
+        {
+            try
+            {
+                var result = await _db.Set<vmGetAttendanceByDate>().FromSqlInterpolated($@"
+                EXEC SP_Mobile_AttendanceRegularization
+                    @Action = {"GetAttendanceByDate"},
+                     @EmpId={model.EmpId},
+                     @ForDate={model.ForDate}
+                    
+            ").ToListAsync();
+
+                if (result.Any())
+                {
+                    return new APIResponse { Status = true, Data = result, ResponseMessage = "Record fetched successfully!" };
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "No record found!" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
+
+
+        public async Task<APIResponse> AttedanceApproveOrReject(ApprovalModel model)
+        {
+            try
+            {
+                var result = await _db.Set<SP_Response>().FromSqlInterpolated($@"
+                EXEC SP_Mobile_AttendanceApproveReject
+                    @UserId={model.UserId}, 
+                    @AttendanceRegularizationId = {model.ApplicationId},
+                    @Status = {model.Status}
+            ").ToListAsync();
+
+                var data = result?.FirstOrDefault() ?? null;
+                if (data != null)
+                {
+                    return new APIResponse { Status = data.Success, ResponseMessage = data.Message };
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
+
     }
 }
