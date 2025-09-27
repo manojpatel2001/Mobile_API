@@ -43,6 +43,10 @@ namespace Mobile_Core.DB
             modelBuilder.Entity<EmployeeDashboardCountModel>().HasNoKey();
             modelBuilder.Entity<vmGetDay>().HasNoKey();
             modelBuilder.Entity<vmGetAttendanceByDate>().HasNoKey();
+            modelBuilder.Entity<vmGetLeaveBalance>().HasNoKey();
+            modelBuilder.Entity<vmGetLeaveType>().HasNoKey();
+            modelBuilder.Entity<vmGetHalfDayType>().HasNoKey();
+            modelBuilder.Entity<vmGetResponsibleperson>().HasNoKey();
 
 
         }
