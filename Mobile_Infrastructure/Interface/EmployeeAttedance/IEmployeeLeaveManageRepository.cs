@@ -8,6 +8,10 @@ namespace Mobile_Infrastructure.Interface.EmployeeAttedance
     {
         Task<APIResponse> LeaveApproveOrReject(ApprovalModel model);
         Task<APIResponse> CreateLeaveApplication(LeaveApplication model);
+        Task<APIResponse> GetLeaveBalance(LeaveApplication model);
+        Task<APIResponse> GetLeaveType();
+        Task<APIResponse> GetHalfDayType();
+        Task<APIResponse> GetResponsibleperson();
 
     }
 

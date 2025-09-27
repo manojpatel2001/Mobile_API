@@ -80,6 +80,109 @@ namespace Mobile_Infrastructure.Repository.EmployeeAttedance
             }
         }
 
+        public async Task<APIResponse> GetLeaveBalance(LeaveApplication model)
+        {
+            try
+            {
+                var result = await _db.Set<vmGetLeaveBalance>().FromSqlInterpolated($@"
+                 EXEC SP_Mobile_LeaveApplication
+                    @Action={"GetLeaveBalance"}, 
+                    @EmployeeId = {model.EmployeeId},
+                    @LeaveTypeId = {model.LeaveTypeId}
+            ").ToListAsync();
+
+               
+                if (result.Any())
+                {
+                    return new APIResponse { Status = true, Data=result, ResponseMessage = "Record fetch sucessfully!"};
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "No record found" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
+        public async Task<APIResponse> GetLeaveType()
+        {
+            try
+            {
+                var result = await _db.Set<vmGetLeaveType>().FromSqlInterpolated($@"
+                 EXEC SP_Mobile_LeaveApplication
+                    @Action={"GetLeaveType"}
+            ").ToListAsync();
+
+               
+                if (result.Any())
+                {
+                    return new APIResponse { Status = true, Data=result, ResponseMessage = "Record fetch sucessfully!"};
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "No record found" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
+        public async Task<APIResponse> GetHalfDayType()
+        {
+            try
+            {
+                var result = await _db.Set<vmGetHalfDayType>().FromSqlInterpolated($@"
+                 EXEC SP_Mobile_LeaveApplication
+                    @Action={"GetHalfDayType"}
+            ").ToListAsync();
+
+               
+                if (result.Any())
+                {
+                    return new APIResponse { Status = true, Data=result, ResponseMessage = "Record fetch sucessfully!"};
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "No record found" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
+        public async Task<APIResponse> GetResponsibleperson()
+        {
+            try
+            {
+                var result = await _db.Set<vmGetResponsibleperson>().FromSqlInterpolated($@"
+                 EXEC SP_Mobile_LeaveApplication
+                    @Action={"GetResponsibleperson"}
+            ").ToListAsync();
+
+               
+                if (result.Any())
+                {
+                    return new APIResponse { Status = true, Data=result, ResponseMessage = "Record fetch sucessfully!"};
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "No record found" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
+
 
     }
 }
