@@ -56,18 +56,14 @@ namespace Mobile_API.Controllers.EmployeeReport
             }
         }
 
-        [HttpGet("GetTodayBirthdaysByCompany/{CompanyId}")]
-        public async Task<APIResponse> GetTodayBirthdaysByCompany(int CompanyId)
+        [HttpPost("GetTodayBirthdaysByCompany")]
+        public async Task<APIResponse> GetTodayBirthdaysByCompany(Common_Parameter model)
         {
             try
             {
-                var data = await _unitOfWork.EmployeeReportRepository.GetTodayBirthdaysByCompany(CompanyId);
-                if(data==null || !data.Any())
-                {
-                    return new APIResponse() { Status = false,  ResponseMessage = "No record found" };
-
-                }
-                return new APIResponse() { Status = true, Data = data, ResponseMessage = "Record fetched successfully" };
+                var data = await _unitOfWork.EmployeeReportRepository.GetTodayBirthdaysByCompany(model);
+                
+                return data;
             }
             catch (Exception err)
             {
@@ -86,12 +82,8 @@ namespace Mobile_API.Controllers.EmployeeReport
             try
             {
                 var data = await _unitOfWork.EmployeeReportRepository.GetUpcomingHolidays(parameter);
-                if(data==null || !data.Any())
-                {
-                    return new APIResponse() { Status = false,  ResponseMessage = "No record found" };
 
-                }
-                return new APIResponse() { Status = true, Data = data, ResponseMessage = "Record fetched successfully" };
+                return data;
             }
             catch (Exception err)
             {

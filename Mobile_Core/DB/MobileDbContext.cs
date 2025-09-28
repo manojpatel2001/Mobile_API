@@ -5,6 +5,7 @@ using Mobile_Core.EmployeeAttedance;
 using Mobile_Core.ViewModel;
 using Mobile_Core.ViewModel.Employee;
 using Mobile_Core.ViewModel.EmployeeReport;
+using Mobile_Core.ViewModel.Intraction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,8 @@ namespace Mobile_Core.DB
             modelBuilder.Entity<vmGetLeaveType>().HasNoKey();
             modelBuilder.Entity<vmGetHalfDayType>().HasNoKey();
             modelBuilder.Entity<vmGetResponsibleperson>().HasNoKey();
+            modelBuilder.Entity<CommentModel>().HasNoKey();
+            modelBuilder.Entity<CommentReplyModel>().HasNoKey();
 
 
         }
