@@ -6,6 +6,7 @@ using Mobile_Core.DB;
 using Mobile_Core.EmployeeAttedance;
 using Mobile_Core.ViewModel;
 using Mobile_Core.ViewModel.EmployeeReport;
+using Mobile_Core.ViewModel.Intraction;
 using Mobile_Infrastructure.Interface.EmployeeManage;
 using Mobile_Utility;
 using System;
@@ -13,6 +14,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -43,32 +45,133 @@ namespace Mobile_Infrastructure.Repository.EmployeeManage
             }
         }
 
-        public async Task<List<vmGetTodayBirthdaysByCompany>> GetTodayBirthdaysByCompany(int CompanyId )
+        public async Task<APIResponse> GetTodayBirthdaysByCompany(Common_Parameter model)
         {
             try
             {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
 
-                var result = await _db.Set<vmGetTodayBirthdaysByCompany>().FromSqlInterpolated($"EXEC sp_Mobile_GetTodayBirthdaysByCompany @CompanyId={CompanyId}").ToListAsync();
-                return result;
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CompanyId", model.CompanyId);
+                    parameters.Add("@UserId", model.UserId);
+
+                    // Execute the stored procedure and get JSON result
+                    var jsonResult = await connection.ExecuteScalarAsync<string>(
+                        "sp_Mobile_GetTodayBirthdaysByCompany",
+                        parameters,
+                        commandType: CommandType.StoredProcedure);
+
+                    // Deserialize the JSON result
+                    var birthdayGroup = JsonSerializer.Deserialize<List<BirthdayGroup>>(jsonResult);
+                    if (birthdayGroup == null)
+                    {
+                        return new APIResponse
+                        {
+                            Status = false,
+                            ResponseMessage = "No record found!",
+
+                        };
+                    }
+
+                    if (birthdayGroup.Any())
+                    {
+                        return new APIResponse
+                        {
+                            Status = true,
+                            ResponseMessage = "Comments fetched successfully",
+                            Data = birthdayGroup
+                        };
+                    }
+                    else
+                    {
+                        return new APIResponse
+                        {
+                            Status = false,
+                            ResponseMessage = "No record found!",
+
+                        };
+                    }
+                }
             }
-            catch
+
+            catch (Exception ex)
             {
-                return new List<vmGetTodayBirthdaysByCompany>();
+                // Log general errors
+                return new APIResponse
+                {
+                    Status = false,
+                    ResponseMessage = "Some thing went wrong!",
+
+                };
             }
         }
-        public async Task<List<vmGetUpcomingHolidays>> GetUpcomingHolidays(Common_Parameter parameter )
+      
+        public async Task<APIResponse> GetUpcomingHolidays(Common_Parameter model)
         {
             try
             {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
 
-                var result = await _db.Set<vmGetUpcomingHolidays>().FromSqlInterpolated($"EXEC SP_Mobile_GetUpcomingHolidays @CompanyId={parameter.CompanyId},@EmployeeId={parameter.UserId}").ToListAsync();
-                return result;
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CompanyId", model.CompanyId);
+                    parameters.Add("@EmployeeId", model.UserId);
+
+                    // Execute the stored procedure and get JSON result
+                    var jsonResult = await connection.ExecuteScalarAsync<string>(
+                        "SP_Mobile_GetUpcomingHolidays",
+                        parameters,
+                        commandType: CommandType.StoredProcedure);
+
+                    // Deserialize the JSON result
+                    var holidays = JsonSerializer.Deserialize<List<HolidaySummary>>(jsonResult);
+                    if (holidays == null)
+                    {
+                        return new APIResponse
+                        {
+                            Status = false,
+                            ResponseMessage = "No record found!",
+
+                        };
+                    }
+
+                    if (holidays.Any())
+                    {
+                        return new APIResponse
+                        {
+                            Status = true,
+                            ResponseMessage = "Comments fetched successfully",
+                            Data = holidays
+                        };
+                    }
+                    else
+                    {
+                        return new APIResponse
+                        {
+                            Status = false,
+                            ResponseMessage = "No record found!",
+
+                        };
+                    }
+                }
             }
-            catch
+
+            catch (Exception ex)
             {
-                return new List<vmGetUpcomingHolidays>();
+                // Log general errors
+                return new APIResponse
+                {
+                    Status = false,
+                    ResponseMessage = "Some thing went wrong!",
+
+                };
             }
         }
+      
+      
 
         public async Task<APIResponse> GetAttendanceCalender(Common_Parameter commonParameter)
         {

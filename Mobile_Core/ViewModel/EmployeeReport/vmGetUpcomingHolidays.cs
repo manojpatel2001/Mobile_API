@@ -2,7 +2,8 @@
 {
     public class vmGetUpcomingHolidays
     {
-        public DateTime? HolidayDate { get; set; }
+        public string? HolidayDate { get; set; }
         public string? HolidayName { get; set; }
+        public string? Holidaycategory { get; set; }
     }
 }

@@ -13,8 +13,8 @@ namespace Mobile_Infrastructure.Interface.EmployeeManage
 {
     public interface IEmployeeReportRepository
     {
-        Task<List<vmGetTodayBirthdaysByCompany>> GetTodayBirthdaysByCompany(int CompanyId);
-        Task<List<vmGetUpcomingHolidays>> GetUpcomingHolidays(Common_Parameter parameter);
+        Task<APIResponse> GetTodayBirthdaysByCompany(Common_Parameter model);
+        Task<APIResponse> GetUpcomingHolidays(Common_Parameter model);
         Task<APIResponse> GetAttendanceCalender(Common_Parameter commonParameter);
         Task<List<vmGetSalarySalaryDetails>> GetSalarySalaryDetails(SalarysDetailsParameter vm);
         Task<List<vmGetMonthlyAttendanceDetails>> GetMonthlyAttendanceDetails(Common_Parameter parameter);
