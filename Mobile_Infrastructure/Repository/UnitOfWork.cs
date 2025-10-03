@@ -40,6 +40,7 @@ namespace Mobile_Infrastructure.Repository
             EmployeeAttendanceRepository = new EmployeeAttendanceRepository(_dbContext);
             EmpployeeManageRepository = new EmployeeManageRepository(_dbContext);
             EmployeeReportRepository = new EmployeeReportRepository(_dbContext);
+            EmployeeLeaveManageRepository = new EmployeeLeaveManageRepository(_dbContext);
             BirthdayInteractionRepository = new BirthdayInteractionRepository(_dbContext);
 
             _logger.LogInformation("UnitOfWork initialized successfully");
