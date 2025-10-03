@@ -30,6 +30,8 @@ namespace Mobile_Core.AuthManage
         public int? BranchId { get; set; }
         public int? CompanyId { get; set; }
         public string? BranchName { get; set; }
+        public int? DepartmentId { get; set; }
+        public string? DepartmentName { get; set; }
         public Boolean? IsReset { get; set; }
         public int? IsGeofencing { get; set; }
         public int? IsSelfiRequired { get; set; }
