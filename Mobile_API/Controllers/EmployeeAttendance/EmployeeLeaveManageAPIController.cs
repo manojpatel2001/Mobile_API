@@ -11,7 +11,7 @@ namespace Mobile_API.Controllers.EmployeeAttendance
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class EmployeeLeaveManageAPIController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
