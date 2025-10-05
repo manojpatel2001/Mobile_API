@@ -7,4 +7,5 @@
         public List<vmGetTodayBirthdaysByCompany>? Birthdays { get; set; }
     }
 
+   
 }

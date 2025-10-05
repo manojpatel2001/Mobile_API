@@ -158,6 +158,20 @@ namespace Mobile_API.Controllers.EmployeeReport
                 return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve status. Please try again later." };
             }
         }
+        [HttpPost("GetEmployeeDashboardDetails")]
+        public async Task<APIResponse> GetEmployeeDashboardDetails(Common_Parameter model)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeReportRepository.GetEmployeeDashboardDetails(model);
+
+                return data;
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve status. Please try again later." };
+            }
+        }
 
        
     }

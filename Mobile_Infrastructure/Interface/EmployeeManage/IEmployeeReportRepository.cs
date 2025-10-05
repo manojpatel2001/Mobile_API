@@ -21,6 +21,7 @@ namespace Mobile_Infrastructure.Interface.EmployeeManage
        
         Task<APIResponse> GetAllAprovalApplication(Common_Parameter commonParameter);
         Task<APIResponse> GetEmployeeDashboardCountDetails(int EmployeeId);
+        Task<APIResponse> GetEmployeeDashboardDetails(Common_Parameter model);
 
     }
 }
