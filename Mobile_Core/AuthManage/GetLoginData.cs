@@ -64,6 +64,10 @@ namespace Mobile_Core.AuthManage
         }
 
         public string? EmployeeProfile { get; set; }
+        public decimal? TotalPresent { get; set; }
+        public decimal? TotalBalance { get; set; }
+        public int? TotalPendingApproval { get; set; }
+        public decimal? NetSalary { get; set; }
     }
 
 }
