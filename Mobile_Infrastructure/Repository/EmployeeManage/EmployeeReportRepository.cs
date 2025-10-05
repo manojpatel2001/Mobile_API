@@ -9,6 +9,7 @@ using Mobile_Core.ViewModel.EmployeeReport;
 using Mobile_Core.ViewModel.Intraction;
 using Mobile_Infrastructure.Interface.EmployeeManage;
 using Mobile_Utility;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -311,7 +312,87 @@ namespace Mobile_Infrastructure.Repository.EmployeeManage
             }
         }
 
-       
+        public async Task<APIResponse> GetEmployeeDashboardDetails(Common_Parameter model)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    await connection.OpenAsync();
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@CompanyId", model.CompanyId);
+                    parameters.Add("@EmployeeId", model.UserId);
+
+                    // Execute the stored procedure and get JSON result
+                    var jsonResult = await connection.ExecuteScalarAsync<string>(
+                        "SP_Mobile_GetEmployeeDashboardDetails",
+                        parameters,
+                        commandType: CommandType.StoredProcedure);
+
+                    if (string.IsNullOrEmpty(jsonResult))
+                    {
+                        return new APIResponse
+                        {
+                            Status = false,
+                            ResponseMessage = "No record found!"
+                        };
+                    }
+
+                    // Parse the JSON manually and create the object
+                    var dashboardData = new EmployeeDashboardViewModel();
+
+                    try
+                    {
+                        var jsonObject = JObject.Parse(jsonResult);
+
+                        // Deserialize Holidays
+                        if (jsonObject["Holidays"] != null)
+                        {
+                            dashboardData.Holidays = jsonObject["Holidays"].ToObject<List<HolidayViewModel>>();
+                        }
+
+                        // Deserialize Birthdays
+                        if (jsonObject["Birthdays"] != null)
+                        {
+                            dashboardData.Birthdays = jsonObject["Birthdays"].ToObject<List<BirthdayViewModel>>();
+                        }
+
+                        // Deserialize DashboardCounts
+                        if (jsonObject["DashboardCounts"] != null)
+                        {
+                            dashboardData.DashboardCounts = jsonObject["DashboardCounts"].ToObject<DashboardCountsViewModel>();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"JSON parsing error: {ex.Message}");
+                        return new APIResponse
+                        {
+                            Status = false,
+                            ResponseMessage = "Error parsing JSON data"
+                        };
+                    }
+
+                    return new APIResponse
+                    {
+                        Status = true,
+                        ResponseMessage = "Records fetched successfully",
+                        Data = dashboardData
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return new APIResponse
+                {
+                    Status = false,
+                    ResponseMessage = "Something went wrong!"
+                };
+            }
+        }
+
+
 
     }
 }
