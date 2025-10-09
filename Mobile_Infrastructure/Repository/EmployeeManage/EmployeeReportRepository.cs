@@ -392,7 +392,31 @@ namespace Mobile_Infrastructure.Repository.EmployeeManage
             }
         }
 
+        public async Task<APIResponse> GetLastCheckInDetails(Common_Parameter model)
+        {
+            try
+            {
+                var result = await _db.Set<LastCheckInDetailsVM>().FromSqlInterpolated($@"
+                 EXEC SP_Mobile_GetLastCheckInDetails
+                    @UserId = {model.UserId}
+            ").ToListAsync();
 
+                var data = result.FirstOrDefault();
+                if (data!=null)
+                {
+                    return new APIResponse { Status = true, Data = data, ResponseMessage = "Record fetch sucessfully!" };
+                }
+                else
+                {
+                    return new APIResponse { Status = false, ResponseMessage = "No record found" };
+                }
+
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Something went wrong" };
+            }
+        }
 
     }
 }

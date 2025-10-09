@@ -36,6 +36,4 @@
         public decimal? NetSalary { get; set; }
     }
 
-
-
 }
