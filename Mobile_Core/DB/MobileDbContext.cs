@@ -50,6 +50,7 @@ namespace Mobile_Core.DB
             modelBuilder.Entity<vmGetResponsibleperson>().HasNoKey();
             modelBuilder.Entity<CommentModel>().HasNoKey();
             modelBuilder.Entity<CommentReplyModel>().HasNoKey();
+            modelBuilder.Entity<LastCheckInDetailsVM>().HasNoKey();
 
 
         }

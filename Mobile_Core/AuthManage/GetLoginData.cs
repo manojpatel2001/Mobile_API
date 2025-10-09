@@ -65,6 +65,8 @@ namespace Mobile_Core.AuthManage
         }
 
         public string? EmployeeProfile { get; set; }
+        public string? BloodGroup { get; set; }
+        public DateTime? DateOfJoining { get; set; }
         
     }
 

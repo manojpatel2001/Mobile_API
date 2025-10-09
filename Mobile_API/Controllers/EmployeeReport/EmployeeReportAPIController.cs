@@ -172,6 +172,20 @@ namespace Mobile_API.Controllers.EmployeeReport
                 return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve status. Please try again later." };
             }
         }
+        [HttpPost("GetLastCheckInDetails")]
+        public async Task<APIResponse> GetLastCheckInDetails(Common_Parameter model)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeReportRepository.GetLastCheckInDetails(model);
+
+                return data;
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve punch details. Please try again later." };
+            }
+        }
 
        
     }
