@@ -418,5 +418,48 @@ namespace Mobile_Infrastructure.Repository.EmployeeManage
             }
         }
 
+
+        public async Task<APIResponse> CalculateMonthlySalary(MonthlySalaryRequestViewModel model)
+        {
+            var response = new APIResponse();
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    var parameters = new DynamicParameters();
+                    parameters.Add("@StartDate", model.StartDate);
+                    parameters.Add("@EndDate", model.EndDate);
+                    parameters.Add("@CompanyId", model.CompanyId);
+                    parameters.Add("@EmployeeCodes", model.EmployeeCodes);
+                    parameters.Add("@BranchIds", model.BranchIds);
+
+
+                    var result = await connection.QueryAsync<dynamic>(
+                        "USP_Mobile_CalculateMonthlySalary",
+                        parameters,
+                        commandType: CommandType.StoredProcedure
+                    );
+
+                    if (result == null||!result.Any())
+                    {
+                        response.Status = false;
+                        response.ResponseMessage = "No records found.";
+                        return response;
+                    }
+
+                    response.Status = true;
+                    response.ResponseMessage = "Success!";
+                    response.Data = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Status = false;
+                response.ResponseMessage = ex.Message;
+                response.Data = null;
+            }
+            return response;
+        }
+
     }
 }
