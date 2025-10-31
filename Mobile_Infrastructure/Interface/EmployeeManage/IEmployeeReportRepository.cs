@@ -23,6 +23,7 @@ namespace Mobile_Infrastructure.Interface.EmployeeManage
         Task<APIResponse> GetEmployeeDashboardCountDetails(int EmployeeId);
         Task<APIResponse> GetEmployeeDashboardDetails(Common_Parameter model);
         Task<APIResponse> GetLastCheckInDetails(Common_Parameter model);
+        Task<APIResponse> CalculateMonthlySalary(MonthlySalaryRequestViewModel model);
 
     }
 }

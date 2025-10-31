@@ -13,7 +13,7 @@ namespace Mobile_API.Controllers.EmployeeReport
 {
     [Route("api/[controller]")]
     [ApiController]
-   [Authorize]
+      [Authorize]
     public class EmployeeReportAPIController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -184,6 +184,20 @@ namespace Mobile_API.Controllers.EmployeeReport
             catch
             {
                 return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve punch details. Please try again later." };
+            }
+        }
+        [HttpPost("CalculateMonthlySalary")]
+        public async Task<APIResponse> CalculateMonthlySalary(MonthlySalaryRequestViewModel model)
+        {
+            try
+            {
+                var data = await _unitOfWork.EmployeeReportRepository.CalculateMonthlySalary(model);
+
+                return data;
+            }
+            catch
+            {
+                return new APIResponse { Status = false, ResponseMessage = "Unable to retrieve  details. Please try again later." };
             }
         }
 
