@@ -6,11 +6,13 @@ using Mobile_Infrastructure.Interface.EmployeeAttedance;
 using Mobile_Infrastructure.Interface.EmployeeManage;
 using Mobile_Infrastructure.Interface.EmpployeeManage;
 using Mobile_Infrastructure.Interface.Intraction;
+using Mobile_Infrastructure.Interface.Settings;
 using Mobile_Infrastructure.Repository.AuthManage;
 using Mobile_Infrastructure.Repository.EmployeeAttedance;
 using Mobile_Infrastructure.Repository.EmployeeManage;
 using Mobile_Infrastructure.Repository.EmpployeeManage;
 using Mobile_Infrastructure.Repository.Intraction;
+using Mobile_Infrastructure.Repository.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +44,9 @@ namespace Mobile_Infrastructure.Repository
             EmployeeReportRepository = new EmployeeReportRepository(_dbContext);
             EmployeeLeaveManageRepository = new EmployeeLeaveManageRepository(_dbContext);
             BirthdayInteractionRepository = new BirthdayInteractionRepository(_dbContext);
+            UserSettingRepository = new UserSettingRepository(_dbContext);
+            MobileNotificationRepository = new MobileNotificationRepository(_dbContext);
+            AnnouncementRepository = new AnnouncementRepository(_dbContext);
 
             _logger.LogInformation("UnitOfWork initialized successfully");
         }
@@ -52,6 +57,9 @@ namespace Mobile_Infrastructure.Repository
         public IEmployeeReportRepository EmployeeReportRepository { get; set; }
         public IEmployeeLeaveManageRepository EmployeeLeaveManageRepository { get; set; }
         public IBirthdayInteractionRepository BirthdayInteractionRepository { get; set; }
+        public IUserSettingRepository UserSettingRepository { get; set; }
+        public IMobileNotificationRepository MobileNotificationRepository { get; set; }
+        public IAnnouncementRepository AnnouncementRepository { get; set; }
         
 
         // Optional: Add disposal logging

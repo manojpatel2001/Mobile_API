@@ -3,6 +3,7 @@ using Mobile_Infrastructure.Interface.EmployeeAttedance;
 using Mobile_Infrastructure.Interface.EmployeeManage;
 using Mobile_Infrastructure.Interface.EmpployeeManage;
 using Mobile_Infrastructure.Interface.Intraction;
+using Mobile_Infrastructure.Interface.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,9 @@ namespace Mobile_Infrastructure.Interface
         IEmployeeReportRepository EmployeeReportRepository { get; }
         IEmployeeLeaveManageRepository EmployeeLeaveManageRepository { get; }
         IBirthdayInteractionRepository BirthdayInteractionRepository { get; }
+        IUserSettingRepository UserSettingRepository { get; }
+        IMobileNotificationRepository MobileNotificationRepository { get; }
+        IAnnouncementRepository AnnouncementRepository { get; }
 
     }
 }
