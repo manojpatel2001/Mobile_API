@@ -4,6 +4,7 @@ using Mobile_Infrastructure.Interface.EmployeeManage;
 using Mobile_Infrastructure.Interface.EmpployeeManage;
 using Mobile_Infrastructure.Interface.Intraction;
 using Mobile_Infrastructure.Interface.Settings;
+using Mobile_Infrastructure.Interface.TaxDocument;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace Mobile_Infrastructure.Interface
         IUserSettingRepository UserSettingRepository { get; }
         IMobileNotificationRepository MobileNotificationRepository { get; }
         IAnnouncementRepository AnnouncementRepository { get; }
+        ITaxDocumentRepository TaxDocumentRepository { get; }
 
     }
 }

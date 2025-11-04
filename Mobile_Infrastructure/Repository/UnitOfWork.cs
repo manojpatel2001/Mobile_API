@@ -7,6 +7,7 @@ using Mobile_Infrastructure.Interface.EmployeeManage;
 using Mobile_Infrastructure.Interface.EmpployeeManage;
 using Mobile_Infrastructure.Interface.Intraction;
 using Mobile_Infrastructure.Interface.Settings;
+using Mobile_Infrastructure.Interface.TaxDocument;
 using Mobile_Infrastructure.Repository.AuthManage;
 using Mobile_Infrastructure.Repository.EmployeeAttedance;
 using Mobile_Infrastructure.Repository.EmployeeManage;
@@ -47,6 +48,7 @@ namespace Mobile_Infrastructure.Repository
             UserSettingRepository = new UserSettingRepository(_dbContext);
             MobileNotificationRepository = new MobileNotificationRepository(_dbContext);
             AnnouncementRepository = new AnnouncementRepository(_dbContext);
+            TaxDocumentRepository = new TaxDocumentRepository(_dbContext);
 
             _logger.LogInformation("UnitOfWork initialized successfully");
         }
@@ -60,6 +62,7 @@ namespace Mobile_Infrastructure.Repository
         public IUserSettingRepository UserSettingRepository { get; set; }
         public IMobileNotificationRepository MobileNotificationRepository { get; set; }
         public IAnnouncementRepository AnnouncementRepository { get; set; }
+        public ITaxDocumentRepository TaxDocumentRepository { get; set; }
         
 
         // Optional: Add disposal logging
