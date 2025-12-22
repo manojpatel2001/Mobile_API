@@ -16,9 +16,8 @@ namespace Mobile_Infrastructure.Interface.EmployeeManage
         Task<APIResponse> GetTodayBirthdaysByCompany(Common_Parameter model);
         Task<APIResponse> GetUpcomingHolidays(Common_Parameter model);
         Task<APIResponse> GetAttendanceCalender(Common_Parameter commonParameter);
-        Task<List<vmGetSalarySalaryDetails>> GetSalarySalaryDetails(SalarysDetailsParameter vm);
+        Task<vmGetSalarySalaryDetails?> GetSalarySalaryDetails(SalarysDetailsParameter vm);
         Task<List<vmGetMonthlyAttendanceDetails>> GetMonthlyAttendanceDetails(Common_Parameter parameter);
-       
         Task<APIResponse> GetAllAprovalApplication(Common_Parameter commonParameter);
         Task<APIResponse> GetEmployeeDashboardCountDetails(int EmployeeId);
         Task<APIResponse> GetEmployeeDashboardDetails(Common_Parameter model);

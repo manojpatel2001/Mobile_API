@@ -1,15 +1,18 @@
-﻿namespace Mobile_Core.ViewModel
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Mobile_Core.ViewModel
 {
     public class vmGetSalarySalaryDetails
     {
+        // SalaryDetails Table Fields
         public int? Id { get; set; }
-        public int? EmployeeId { get; set; }  // int (not string)
-        public string? EmployeeCode { get; set; }
-        public string? EmployeeName { get; set; }
+        public int? EmployeeId { get; set; }
+        public string EmployeeCode { get; set; }
+        public string EmployeeName { get; set; }
         public decimal? GrossSalary { get; set; }
-        public decimal? PayableDays { get; set; }  // decimal (not int)
+        public decimal? PayableDays { get; set; }
         public int? MonthNumber { get; set; }
-        public string? MonthName { get; set; }
+        public string MonthName { get; set; }
         public int? Year { get; set; }
         public decimal? BasicSalary { get; set; }
         public decimal? HRA { get; set; }
@@ -33,26 +36,31 @@
         public DateTime? CreatedDate { get; set; }
         public int? MonthDays { get; set; }
         public int? Holiday { get; set; }
-        public decimal? AbsentDays { get; set; }  // decimal (not int)
-        public decimal? PresentDays { get; set; }  // decimal (not int)
+        public decimal? AbsentDays { get; set; }
+        public decimal? PresentDays { get; set; }
         public int? WeekOff { get; set; }
         public decimal? Leave { get; set; }
         public int? SalaryDays { get; set; }
 
-        // Employee details from joins
-        public string? FullName { get; set; }
+        // Employee Details from Joins
+        public string FullName { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public DateTime? DateOfJoining { get; set; }
-        public string? PrimaryAccountNumber { get; set; }
-        public string? PrimaryBankName { get; set; }
-        public string? PANNo { get; set; }
-        public string? PFNo { get; set; }
-        public string? ESICNo { get; set; }
-        public string? UANNumber { get; set; }
-        public string? BranchName { get; set; }
-        public string? DesignationName { get; set; }
-        public string? DepartmentName { get; set; }
-        public string? GradeName { get; set; }
+        public string PrimaryAccountNumber { get; set; }
+        public string PrimaryBankName { get; set; }
+        public string PANNo { get; set; }
+        public string PFNo { get; set; }
+        public string ESICNo { get; set; }
+        public string UANNumber { get; set; }
 
+        // Branch, Designation, Department, Grade, and Company Details
+        public string BranchName { get; set; }
+        public string DesignationName { get; set; }
+        public string DepartmentName { get; set; }
+        public string GradeName { get; set; }
+        public string CompanyName { get; set; }
+        public string CompanyAddress { get; set; }
+        [NotMapped]
+        public string SalaryPdfUrl { get; set; }
     }
 }
