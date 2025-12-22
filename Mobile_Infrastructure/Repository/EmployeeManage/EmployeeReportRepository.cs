@@ -32,17 +32,17 @@ namespace Mobile_Infrastructure.Repository.EmployeeManage
             _connectionString = db.Database.GetDbConnection().ConnectionString;
         }
 
-        public async Task<List<vmGetSalarySalaryDetails>> GetSalarySalaryDetails(SalarysDetailsParameter vm)
+        public async Task<vmGetSalarySalaryDetails?> GetSalarySalaryDetails(SalarysDetailsParameter vm)
         {
             try
             {
 
                 var result = await _db.Set<vmGetSalarySalaryDetails>().FromSqlInterpolated($"EXEC SP_Mobile_GetSalarySalaryDetails @EmployeeId={vm.EmployeeId},@Month={vm.Month},@Year={vm.Year}").ToListAsync();
-                return result;
+                return result.FirstOrDefault();
             }
             catch
             {
-                return new List<vmGetSalarySalaryDetails>();
+                return null;
             }
         }
 

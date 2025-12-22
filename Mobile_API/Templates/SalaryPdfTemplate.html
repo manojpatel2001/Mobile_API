@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payslip</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        .container {
+            width: 800px;
+            margin: auto;
+            border: 1px solid #000;
+            padding: 15px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .logo {
+            float: left;
+            width: 200px; /* Increased logo size */
+            height: auto;
+        }
+
+        .company-name {
+            font-size: 20px; /* Increased font size */
+            font-weight: bold;
+        }
+
+        .address {
+            font-size: 14px; /* Increased font size */
+            margin-top: 5px;
+        }
+
+        .title {
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 16px; /* Increased font size */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        td, th {
+            border: 1px solid #000;
+            padding: 10px 6px; /* Increased padding for taller rows */
+            font-size: 14px; /* Increased font size */
+            vertical-align: middle;
+        }
+
+        th {
+            background: #f2f2f2;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .netpay {
+            background: #ffffcc;
+            border: 1px solid #000;
+            padding: 15px; /* Increased padding */
+            margin-top: 15px;
+            font-size: 16px; /* Increased font size */
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 13px; /* Increased font size */
+            margin-top: 15px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <img src="{{CompanyLogoUrl}}" class="logo">
+            <div class="company-name">{{CompanayName}}</div>
+            <div class="address">
+                {{CompanyAddress}}
+            </div>
+            <div class="title">
+                Pay slip for the month of {{MonthName}} - {{Year}}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- EMPLOYEE DETAILS -->
+        <table>
+            <tr>
+                <td><b>Employee Code</b> : {{EmployeeCode}}</td>
+                <td><b>Employee Name</b> : {{FullName}}</td>
+                <td><b>Branch</b> : {{BranchName}}</td>
+            </tr>
+            <tr>
+                <td><b>Department</b> : {{DepartmentName}}</td>
+                <td><b>Designation</b> : {{DesignationName}}</td>
+                <td><b>Grade</b> : {{GradeName}}</td>
+            </tr>
+            <tr>
+                <td><b>Date of Birth</b> : {{DateOfBirth}}</td>
+                <td><b>Date of Joining</b> : {{DateOfJoining}}</td>
+                <td><b>PF No</b> : {{PFNo}}</td>
+            </tr>
+            <tr>
+                <td><b>Bank A/c No</b> : {{PrimaryAccountNumber}}</td>
+                <td><b>Bank Name</b> : {{PrimaryBankName}}</td>
+                <td><b>PAN No</b> : {{PANNo}}</td>
+            </tr>
+            <tr>
+                <td><b>UAN No</b> : {{UANNumber}}</td>
+                <td><b>ESIC No</b> : {{ESICNo}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <b>Present Day</b> : {{PresentDays}}
+                    &nbsp;&nbsp;
+                    <b>Paid Leave</b> : {{PaidLeave}}
+                    &nbsp;&nbsp;
+                    <b>Holiday</b> : {{Holiday}}
+                    &nbsp;&nbsp;
+                    <b>Week off</b> : {{WeekOff}}
+                    &nbsp;&nbsp;
+                    <b>Total Sal Day</b> : {{TotalSalaryDays}}
+                    &nbsp;&nbsp;
+                    <b>Absent</b> : {{Absent}}
+                </td>
+            </tr>
+        </table>
+
+        <!-- SALARY TABLE -->
+        <table>
+            <tr>
+                <th width="32%">Particulars</th>
+                <th width="14%">Rate</th>
+                <th width="14%">Earnings</th>
+                <th width="25%">Particulars</th>
+                <th width="15%">Deduction</th>
+            </tr>
+
+            <tr>
+                <td>Basic Salary</td>
+                <td class="right">{{BasicSalary}}</td>
+                <td class="right">{{BasicSalary}}</td>
+                <td>Professional Tax</td>
+                <td class="right">{{ProfessionalTax}}</td>
+            </tr>
+
+            <tr>
+                <td>House Rent Allowance (HRA)</td>
+                <td class="right">{{HRA}}</td>
+                <td class="right">{{HRA}}</td>
+                <td>Group Medical</td>
+                <td class="right">{{GroupMedical}}</td>
+            </tr>
+
+            <tr>
+                <td>Conveyance Allowances</td>
+                <td class="right">{{ConveyanceAllowance}}</td>
+                <td class="right">{{ConveyanceAllowance}}</td>
+                <td>Term Insurance</td>
+                <td class="right">{{TermInsurance}}</td>
+            </tr>
+
+            <tr>
+                <td>Medical Allowances</td>
+                <td class="right">{{MedicalAllowance}}</td>
+                <td class="right">{{MedicalAllowance}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Child Education Allowance (CEA)</td>
+                <td class="right">{{ChildEducationAllowance}}</td>
+                <td class="right">{{ChildEducationAllowance}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Deputation Allowance</td>
+                <td class="right">{{DeputationAllowance}}</td>
+                <td class="right">{{DeputationAllowance}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr style="font-weight:bold;">
+                <td>Total Earnings</td>
+                <td></td>
+                <td class="right">{{TotalEarnings}}</td>
+                <td>Total Deduction</td>
+                <td class="right">{{TotalDeductions}}</td>
+            </tr>
+        </table>
+
+        <!-- NET PAY -->
+        <div class="netpay">
+            Employee Net Pay : {{NetSalary}} ({{NetSalaryInWords}})
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            This is a computer generated salary slip. Signature not required.
+        </div>
+    </div>
+</body>
+</html>
