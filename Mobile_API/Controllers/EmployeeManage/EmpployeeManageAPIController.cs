@@ -13,7 +13,7 @@ namespace Mobile_API.Controllers.EmployeeManage
 {
     [Route("api/[controller]")]
     [ApiController]
-   [Authorize]
+   //[Authorize]
     public class EmpployeeManageAPIController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -68,43 +68,7 @@ namespace Mobile_API.Controllers.EmployeeManage
             }
         }
 
-        [HttpPost("AddAppVersion")]
-        public async Task<APIResponse> AddAppVersion(AppVersionModel model)
-        {
-            try
-            {
-                if (model == null )
-                    return new APIResponse { Status = false, ResponseMessage = "Version details cannot be null." };
-                
-
-                if (model.DocumentFile != null)
-                {
-                    if (model.DocumentFile.Length > 0)
-                    {
-
-                        var folder = $"uploads/app_version_file";
-                        var fileUrl = await _fileUploadService.UploadAndReplaceDocumentAsync(model.DocumentFile, folder,null);
-                        if (string.IsNullOrEmpty(fileUrl))
-                        {
-                            return new APIResponse { Status = false, ResponseMessage = "Some thing went wrong. Please try again later." };
-
-                        }
-                        model.DocumentPath = fileUrl;
-                        model.FileSize = Math.Round((decimal)model.DocumentFile.Length / (1024 * 1024), 2);
-                        model.DocumentName = model.DocumentFile.FileName;
-                    }
-
-                }
-                var result = await _unitOfWork.EmpployeeManageRepository.AddAppVersion(model);
-
-                return result;
-            }
-            catch (Exception ex)
-            {
-                return new APIResponse { Status = false,  ResponseMessage = "Unable to  add app version . Please try again later." };
-            }
-        }
-
+      
        
     }
 }

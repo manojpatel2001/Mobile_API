@@ -1,4 +1,5 @@
-﻿using Mobile_Infrastructure.Interface.AuthManage;
+﻿using Mobile_Infrastructure.Interface.AppVersion;
+using Mobile_Infrastructure.Interface.AuthManage;
 using Mobile_Infrastructure.Interface.EmployeeAttedance;
 using Mobile_Infrastructure.Interface.EmployeeManage;
 using Mobile_Infrastructure.Interface.EmpployeeManage;
@@ -25,6 +26,7 @@ namespace Mobile_Infrastructure.Interface
         IMobileNotificationRepository MobileNotificationRepository { get; }
         IAnnouncementRepository AnnouncementRepository { get; }
         ITaxDocumentRepository TaxDocumentRepository { get; }
+        IMobileAppVersionRepository MobileAppVersionRepository { get; }
 
     }
 }
