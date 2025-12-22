@@ -13,7 +13,7 @@ namespace Mobile_API.Controllers.EmployeeReport
 {
     [Route("api/[controller]")]
     [ApiController]
-     // [Authorize]
+    [Authorize]
     public class EmployeeReportAPIController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
